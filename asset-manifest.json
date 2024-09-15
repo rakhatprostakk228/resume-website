@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/resume-website/static/css/main.e7a81e39.css",
+    "main.js": "/resume-website/static/js/main.18b9685d.js",
+    "static/js/453.5e560239.chunk.js": "/resume-website/static/js/453.5e560239.chunk.js",
+    "static/media/sneakerShop.png": "/resume-website/static/media/sneakerShop.3155b1034573daeefd86.png",
+    "static/media/animation.png": "/resume-website/static/media/animation.c9619fb3d13c86716e80.png",
+    "static/media/me.jpg": "/resume-website/static/media/me.101478a346dc8a5254ae.jpg",
+    "static/media/profile.png": "/resume-website/static/media/profile.367f76678766bfb15c98.png",
+    "static/media/cross.png": "/resume-website/static/media/cross.f64044ab7e3ba7f44029.png",
+    "static/media/javaScript.jpg": "/resume-website/static/media/javaScript.5b9e8139b9d292377197.jpg",
+    "static/media/react.jpg": "/resume-website/static/media/react.0cffc99a7bb636d89745.jpg",
+    "static/media/htmlAndCss.jpg": "/resume-website/static/media/htmlAndCss.65cf34cedbd647d42446.jpg",
+    "static/media/postgre.png": "/resume-website/static/media/postgre.9cc80194f1154138f02e.png",
+    "static/media/golang.png": "/resume-website/static/media/golang.8177d56966adfbfc0a2f.png",
+    "static/media/ts.png": "/resume-website/static/media/ts.21771fed1d1b98aaec2e.png",
+    "static/media/java.png": "/resume-website/static/media/java.5f176286b8df4f774677.png",
+    "index.html": "/resume-website/index.html",
+    "main.e7a81e39.css.map": "/resume-website/static/css/main.e7a81e39.css.map",
+    "main.18b9685d.js.map": "/resume-website/static/js/main.18b9685d.js.map",
+    "453.5e560239.chunk.js.map": "/resume-website/static/js/453.5e560239.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e7a81e39.css",
+    "static/js/main.18b9685d.js"
+  ]
+}
