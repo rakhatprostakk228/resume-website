@@ -16,7 +16,7 @@ const data = [
     "I'm always ready to learn",
     'I have a lot of free time',
     'My English level is B2',
-    "I have no experience with companies"
+    "I have experience with companies"
 ];
 
 function FooterWidget() {

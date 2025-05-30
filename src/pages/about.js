@@ -10,7 +10,7 @@ const items = [
     {
       key: '1',
       label: 'About me',
-      children: "My name is Rakhat, I'm 18 years old and my motherland is Pavlodar. Outside of tech, I enjoy sports like swimming and football. I'm also working on improving my Kazakh language skills, as I believe in staying connected to my roots. I believe in continuous learning and adaptability. Whether it's coding or sports, I'm always pushing myself to improve and face new challenges.",
+      children: "My name is Rakhat, I'm 19 years old and my motherland is Pavlodar. Outside of tech, I enjoy sports like swimming and football. I'm also working on improving my Kazakh language skills, as I believe in staying connected to my roots. I believe in continuous learning and adaptability. Whether it's coding or sports, I'm always pushing myself to improve and face new challenges.",
     },
     {
       key: '2',
