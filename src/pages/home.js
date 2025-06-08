@@ -4,10 +4,12 @@ import Information from "../components/home/information";
 
 function AppHome() {
     return (
-        <div className="container">
+        <div>
             <Hero />
-            <RecentProducts />
-            <Information />
+            <div className="container">
+                <RecentProducts />
+                <Information />
+            </div>
         </div>
     )
 }
