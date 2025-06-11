@@ -89,17 +89,13 @@ function AppHeader() {
                             </div>
                             
                             <div className="theme-switch">
-                                <div className="theme-toggle-wrapper" onClick={toggleTheme}>
-                                    <div className={`theme-slider ${isDark ? 'dark' : 'light'}`}>
-                                        <div className="theme-icon sun">
-                                            <SunOutlined />
-                                        </div>
-                                        <div className="theme-icon moon">
-                                            <MoonOutlined />
-                                        </div>
-                                        <div className="theme-indicator"></div>
-                                    </div>
-                                </div>
+                                <Button
+                                    type="text"
+                                    onClick={toggleTheme}
+                                    className={`theme-toggle-button ${isDark ? 'dark' : 'light'}`}
+                                    icon={isDark ? <SunOutlined /> : <MoonOutlined />}
+                                    title={isDark ? 'Переключить на светлую тему' : 'Переключить на темную тему'}
+                                />
                             </div>
                         </div>
                     </div>

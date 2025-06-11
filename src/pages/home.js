@@ -9,14 +9,12 @@ function AppHome() {
     return (
         <div>
             <Hero />
-            <div className="container">
-                <RecentProducts />
-            </div>
-            <Skills />
-            <Timeline />
+            <RecentProducts />
             <div className="container">
                 <Information />
             </div>
+            <Skills />
+            <Timeline />
             <Contact />
         </div>
     )

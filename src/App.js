@@ -11,6 +11,8 @@ import AppAbout from './pages/about';
 import AppFaq from './pages/faq';
 import FooterWidget from './components/common/footerWidget';
 import FooterCopyright from './components/common/footerCopyright';
+import ScrollToTop from './components/scrollToTop';
+import SectionNavigation from './components/sectionNav';
 
 const { Header, Footer, Content } = Layout;
 
@@ -36,6 +38,8 @@ function App() {
             <FooterCopyright />
           </Footer>
         </Layout>
+        <ScrollToTop />
+        <SectionNavigation />
       </div>
     </ThemeProvider>
   );
