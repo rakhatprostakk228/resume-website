@@ -57,7 +57,7 @@ function Hero() {
     }, []);
 
     const scrollToProjects = () => {
-        const element = document.querySelector('.products');
+        const element = document.querySelector('.modern-projects-section');
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
         }
@@ -82,7 +82,7 @@ function Hero() {
             <div className="hero-content">
                 <Row gutter={[40, 40]} align="middle" className="hero-row">
                     <Col xs={24} lg={14}>
-                        <div className="hero-text">
+                        <div className="hero-text" style={{ textAlign: 'left' }}>
                             <div className="greeting">Hello, I'm</div>
                             <h1 className="hero-name">Rakhat</h1>
                             <div className="title-container">

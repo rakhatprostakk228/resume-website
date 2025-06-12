@@ -91,26 +91,26 @@ function Skills() {
                     <Row gutter={[40, 40]} className="experience-stats">
                         <Col xs={12} md={6}>
                             <div className="stat-item">
-                                <div className="stat-number">2+</div>
-                                <div className="stat-label">Years Learning</div>
+                                <div className="stat-number2">2+</div>
+                                <div className="stat-label2">Years Learning</div>
                             </div>
                         </Col>
                         <Col xs={12} md={6}>
                             <div className="stat-item">
-                                <div className="stat-number">10+</div>
-                                <div className="stat-label">Projects</div>
+                                <div className="stat-number2">10+</div>
+                                <div className="stat-label2">Projects</div>
                             </div>
                         </Col>
                         <Col xs={12} md={6}>
                             <div className="stat-item">
-                                <div className="stat-number">2</div>
-                                <div className="stat-label">Companies</div>
+                                <div className="stat-number2">2</div>
+                                <div className="stat-label2">Companies</div>
                             </div>
                         </Col>
                         <Col xs={12} md={6}>
                             <div className="stat-item">
-                                <div className="stat-number">B2</div>
-                                <div className="stat-label">English Level</div>
+                                <div className="stat-number2">B2</div>
+                                <div className="stat-label2">English Level</div>
                             </div>
                         </Col>
                     </Row>

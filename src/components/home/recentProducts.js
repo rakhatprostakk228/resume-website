@@ -18,7 +18,7 @@ const projects = [
         technologies: ['React', 'CSS3', 'JavaScript', 'Responsive Design'],
         category: 'E-commerce',
         status: 'Completed',
-        year: '2023',
+        year: '2024, 2025',
         featured: true,
         links: {
             live: 'https://rakhatprostakk228.github.io/sneakers_shop/',
@@ -33,7 +33,7 @@ const projects = [
         technologies: ['HTML5', 'CSS3', 'JavaScript', 'GSAP Animations'],
         category: 'Landing Page',
         status: 'Completed',
-        year: '2023',
+        year: '2024',
         featured: false,
         links: {
             live: 'https://rakhatprostakk228.github.io/crypto_animation/',

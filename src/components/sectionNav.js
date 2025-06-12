@@ -6,7 +6,7 @@ function SectionNavigation() {
 
     const sections = [
         { id: 'hero', label: 'Home', selector: '.modern-hero' },
-        { id: 'projects', label: 'Projects', selector: '.products' },
+        { id: 'projects', label: 'Projects', selector: '.modern-projects-section' },
         { id: 'skills', label: 'Skills', selector: '.skills-section' },
         { id: 'timeline', label: 'Journey', selector: '.timeline-section' },
         { id: 'contact', label: 'Contact', selector: '.contact-section' }
@@ -15,8 +15,8 @@ function SectionNavigation() {
     useEffect(() => {
         const observerOptions = {
             root: null,
-            rootMargin: '-50% 0px -50% 0px',
-            threshold: 0
+            rootMargin: '0px',
+            threshold: 0.5
         };
 
         const observerCallback = (entries) => {
