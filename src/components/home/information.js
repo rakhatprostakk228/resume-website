@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Col, Row, Tag, Button } from 'antd';
+import { Col, Row, Tag, Button, Modal } from 'antd';
 import { 
     CalendarOutlined, 
     TeamOutlined, 
@@ -7,7 +7,13 @@ import {
     EnvironmentOutlined,
     TrophyOutlined,
     LinkOutlined,
-    RocketOutlined
+    RocketOutlined,
+    EyeOutlined,
+    CloseOutlined,
+    ZoomInOutlined,
+    ZoomOutOutlined,
+    RotateLeftOutlined,
+    RotateRightOutlined
 } from '@ant-design/icons';
 
 import KMG from '../../assets/images/kmg.jpg';
@@ -37,7 +43,7 @@ const workExperience = [
     },
     {
         id: '2',
-        company: 'SeedSchool',
+        company: 'Seed School',
         position: 'Web Developer',
         period: '2025',
         location: 'Astana, Kazakhstan',
@@ -61,6 +67,10 @@ const workExperience = [
 function Information() {
     const [visibleCards, setVisibleCards] = useState([]);
     const [activeCard, setActiveCard] = useState(null);
+    const [modalVisible, setModalVisible] = useState(false);
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [imageScale, setImageScale] = useState(1);
+    const [imageRotation, setImageRotation] = useState(0);
     const sectionRef = useRef(null);
 
     useEffect(() => {
@@ -93,6 +103,41 @@ function Information() {
             'Full-time': '#722ed1'
         };
         return colors[type] || '#27c4ff';
+    };
+
+    const openImageModal = (image, company) => {
+        setSelectedImage({ src: image, company });
+        setModalVisible(true);
+        setImageScale(1);
+        setImageRotation(0);
+    };
+
+    const closeModal = () => {
+        setModalVisible(false);
+        setSelectedImage(null);
+        setImageScale(1);
+        setImageRotation(0);
+    };
+
+    const zoomIn = () => {
+        setImageScale(prev => Math.min(prev + 0.25, 3));
+    };
+
+    const zoomOut = () => {
+        setImageScale(prev => Math.max(prev - 0.25, 0.5));
+    };
+
+    const rotateLeft = () => {
+        setImageRotation(prev => prev - 90);
+    };
+
+    const rotateRight = () => {
+        setImageRotation(prev => prev + 90);
+    };
+
+    const resetImage = () => {
+        setImageScale(1);
+        setImageRotation(0);
     };
 
     return (
@@ -149,6 +194,15 @@ function Information() {
                                         <div className="company-logo">
                                             <span>{experience.company[0]}</span>
                                         </div>
+                                        <Button
+                                            type="primary"
+                                            shape="circle"
+                                            size="large"
+                                            icon={<EyeOutlined />}
+                                            className="view-image-btn"
+                                            onClick={() => openImageModal(experience.image, experience.company)}
+                                            title="View full image"
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -224,6 +278,92 @@ function Information() {
                     </Col>
                 ))}
             </Row>
+
+            <Modal
+                open={modalVisible}
+                onCancel={closeModal}
+                footer={null}
+                width="90vw"
+                height="90vh"
+                centered
+                closable={false}
+                className="image-modal"
+                bodyStyle={{ 
+                    padding: 0, 
+                    height: '90vh',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    background: 'rgba(0, 0, 0, 0.9)'
+                }}
+            >
+                {selectedImage && (
+                    <>
+                        <div className="modal-header">
+                            <div className="modal-title">
+                                <h3>{selectedImage.company} Project Screenshot</h3>
+                            </div>
+                            <div className="modal-controls">
+                                <Button
+                                    type="text"
+                                    icon={<ZoomOutOutlined />}
+                                    onClick={zoomOut}
+                                    disabled={imageScale <= 0.5}
+                                    className="modal-control-btn"
+                                    title="Zoom Out"
+                                />
+                                <Button
+                                    type="text"
+                                    icon={<ZoomInOutlined />}
+                                    onClick={zoomIn}
+                                    disabled={imageScale >= 3}
+                                    className="modal-control-btn"
+                                    title="Zoom In"
+                                />
+                                <Button
+                                    type="text"
+                                    icon={<RotateLeftOutlined />}
+                                    onClick={rotateLeft}
+                                    className="modal-control-btn"
+                                    title="Rotate Left"
+                                />
+                                <Button
+                                    type="text"
+                                    icon={<RotateRightOutlined />}
+                                    onClick={rotateRight}
+                                    className="modal-control-btn"
+                                    title="Rotate Right"
+                                />
+                                <Button
+                                    type="text"
+                                    onClick={resetImage}
+                                    className="modal-control-btn"
+                                    title="Reset"
+                                >
+                                    Reset
+                                </Button>
+                                <Button
+                                    type="text"
+                                    icon={<CloseOutlined />}
+                                    onClick={closeModal}
+                                    className="modal-close-btn"
+                                    title="Close"
+                                />
+                            </div>
+                        </div>
+                        <div className="modal-image-container">
+                            <img
+                                src={selectedImage.src}
+                                alt={`${selectedImage.company} project`}
+                                className="modal-image"
+                                style={{
+                                    transform: `scale(${imageScale}) rotate(${imageRotation}deg)`,
+                                    transition: 'transform 0.3s ease'
+                                }}
+                            />
+                        </div>
+                    </>
+                )}
+            </Modal>
         </div>
     );
 }
