@@ -55,6 +55,7 @@ function ScrollToTop() {
                         style={{
                             strokeDasharray: `${2 * Math.PI * 26}`,
                             strokeDashoffset: `${2 * Math.PI * 26 * (1 - scrollProgress / 100)}`,
+                            transition: 'stroke-dashoffset 0.1s ease'
                         }}
                     />
                 </svg>

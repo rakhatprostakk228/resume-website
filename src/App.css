@@ -2305,6 +2305,9 @@ img {
   position: relative;
   width: 60px;
   height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .progress-ring {
@@ -3399,6 +3402,10 @@ body {
   border-color: rgba(39, 196, 255, 0.8);
 }
 
+.dark-theme .progress-ring-circle-bg {
+  stroke: rgba(255, 255, 255, 0.15) !important;
+}
+
 .dark-theme .nav-dot:hover .dot-inner,
 .dark-theme .nav-dot.active .dot-inner {
   background: #27c4ff;
@@ -4032,11 +4039,16 @@ body {
     r: 21;
     cx: 25;
     cy: 25;
+    stroke-width: 2.5;
   }
   
   .scroll-button {
     width: 40px !important;
     height: 40px !important;
+  }
+
+  .scroll-button .anticon {
+    font-size: 14px;
   }
 
   /* About page tablet styles */
@@ -4358,7 +4370,7 @@ body {
   }
   
   .scroll-to-top {
-    bottom: 100px;
+    bottom: 100px; /* Поднимаем выше на мобильных */
     right: 15px;
   }
   
@@ -4377,12 +4389,16 @@ body {
     r: 18;
     cx: 22.5;
     cy: 22.5;
+    stroke-width: 2;
   }
   
   .scroll-button {
     width: 35px !important;
     height: 35px !important;
-    font-size: 14px !important;
+  }
+
+  .scroll-button .anticon {
+    font-size: 12px;
   }
 
   /* About page mobile styles */
@@ -4493,6 +4509,40 @@ body {
   
   .modal-image-container {
     padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .scroll-to-top {
+    bottom: 80px;
+    right: 12px;
+  }
+  
+  .scroll-progress-ring {
+    width: 42px;
+    height: 42px;
+  }
+  
+  .progress-ring {
+    width: 42px;
+    height: 42px;
+  }
+  
+  .progress-ring-circle,
+  .progress-ring-circle-bg {
+    r: 17;
+    cx: 21;
+    cy: 21;
+    stroke-width: 2;
+  }
+  
+  .scroll-button {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .scroll-button .anticon {
+    font-size: 11px;
   }
 }
 
