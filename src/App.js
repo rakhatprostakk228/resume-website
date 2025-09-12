@@ -4,6 +4,7 @@ import './App.css';
 
 import {Route, Routes, HashRouter as Router, useLocation} from 'react-router-dom';
 import { ThemeProvider } from './components/context/themeContext';
+import { LanguageProvider } from './components/context/languageContext';
 import { useEffect } from 'react';
 
 import AppHeader from './components/common/header';
@@ -43,32 +44,34 @@ function PageWrapper({ children }) {
 
 function App() {
   return (
-    <ThemeProvider>
-      <div className="App">
-        <Layout>
-          <Router>
-            <PageWrapper>
-              <Header>
-                <AppHeader />
-              </Header>
-              <Content>
-                <Routes>
-                  <Route path='/' element={<AppHome />} />
-                  <Route path='/about' element={<AppAbout />} />
-                  <Route path='/faq' element={<AppFaq />} />
-                </Routes>
-              </Content>
-            </PageWrapper>
-          </Router>
-          <Footer>
-            <FooterWidget />
-            <FooterCopyright />
-          </Footer>
-        </Layout>
-        <ScrollToTop />
-        <SectionNavigation />
-      </div>
-    </ThemeProvider>
+    <LanguageProvider>
+      <ThemeProvider>
+        <div className="App">
+          <Layout>
+            <Router>
+              <PageWrapper>
+                <Header>
+                  <AppHeader />
+                </Header>
+                <Content>
+                  <Routes>
+                    <Route path='/' element={<AppHome />} />
+                    <Route path='/about' element={<AppAbout />} />
+                    <Route path='/faq' element={<AppFaq />} />
+                  </Routes>
+                </Content>
+              </PageWrapper>
+            </Router>
+            <Footer>
+              <FooterWidget />
+              <FooterCopyright />
+            </Footer>
+          </Layout>
+          <ScrollToTop />
+          <SectionNavigation />
+        </div>
+      </ThemeProvider>
+    </LanguageProvider>
   );
 }
 

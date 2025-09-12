@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Col, Row, Button } from 'antd';
 import { GithubOutlined, LinkedinFilled, DownOutlined } from '@ant-design/icons';
+import { useLanguage } from '../context/languageContext';
 
 function Hero() {
     const [displayedText, setDisplayedText] = useState('');
@@ -8,11 +9,13 @@ function Hero() {
     const [isDeleting, setIsDeleting] = useState(false);
     const [particles, setParticles] = useState([]);
     
+    const { t } = useLanguage();
+    
     const titles = [
-        ' Software Engineer',
-        ' React Developer', 
-        ' Frontend Developer',
-        ' Web Developer'
+        t('hero.title1'),
+        t('hero.title2'), 
+        t('hero.title3'),
+        t('hero.title4')
     ];
 
     useEffect(() => {
@@ -83,15 +86,14 @@ function Hero() {
                 <Row gutter={[40, 40]} align="middle" className="hero-row">
                     <Col xs={24} lg={14}>
                         <div className="hero-text" style={{ textAlign: 'left' }}>
-                            <div className="greeting">Hello, I'm</div>
-                            <h1 className="hero-name">Rakhat</h1>
+                            <div className="greeting">{t('hero.greeting')}</div>
+                            <h1 className="hero-name">{t('hero.name')}</h1>
                             <div className="title-container">
-                                <span className="title-text">I'm a <span className="typed-text">{displayedText}</span></span>
+                                <span className="title-text">{t('hero.title1').includes('Software') ? "I'm a " : ""}<span className="typed-text">{displayedText}</span></span>
                                 <span className="cursor">|</span>
                             </div>
                             <p className="hero-description">
-                                19-year-old software engineering student from Astana IT University, 
-                                passionate about creating modern web applications with React and JavaScript.
+                                {t('hero.description')}
                             </p>
                             <div className="hero-buttons">
                                 <Button 
@@ -100,7 +102,7 @@ function Hero() {
                                     onClick={scrollToProjects}
                                     className="cta-button"
                                 >
-                                    View My Work
+                                    {t('hero.viewWork')}
                                 </Button>
                                 <div className="social-links">
                                     <a href='https://github.com/rakhatprostakk228' target="_blank" rel="noopener noreferrer">
@@ -164,7 +166,7 @@ function Hero() {
 
             <div className="scroll-indicator" onClick={scrollToProjects}>
                 <DownOutlined />
-                <span>Scroll to explore</span>
+                <span>{t('hero.scrollToExplore')}</span>
             </div>
         </div>
     );

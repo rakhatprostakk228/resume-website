@@ -13,56 +13,14 @@ import {
     ZoomInOutlined,
     ZoomOutOutlined,
     RotateLeftOutlined,
-    RotateRightOutlined
+    RotateRightOutlined,
+    GlobalOutlined
 } from '@ant-design/icons';
+import { useLanguage } from '../context/languageContext';
 
 import KMG from '../../assets/images/kmg.jpg';
 import Seed from '../../assets/images/seed.jpg';
-
-const workExperience = [
-    {
-        id: '1',
-        company: 'KazMunayGaz',
-        position: 'Frontend Developer Intern',
-        period: '2024',
-        location: 'Astana, Kazakhstan',
-        image: KMG,
-        description: 'Developed an interactive web application for working with flowcharts and process diagrams. Created intuitive user interfaces for complex data visualization and workflow management systems.',
-        technologies: ['JavaScript', 'HTML5', 'CSS3', 'Chart.js', 'Responsive Design'],
-        type: 'Internship',
-        category: 'Energy Sector',
-        achievements: [
-            'Built flowchart visualization tool',
-            'Improved workflow efficiency',
-            'Worked with enterprise systems',
-            'Collaborated with senior developers'
-        ],
-        impact: 'Enhanced workflow management for engineering teams',
-        status: 'Completed',
-        featured: true
-    },
-    {
-        id: '2',
-        company: 'Seed School',
-        position: 'Web Developer',
-        period: '2025',
-        location: 'Astana, Kazakhstan',
-        image: Seed,
-        description: 'Created a comprehensive educational platform for Kazakh language courses. Developed interactive learning modules, progress tracking, and user-friendly course management system.',
-        technologies: ['React', 'JavaScript', 'CSS3', 'Educational UX', 'Mobile-First'],
-        type: 'Contract',
-        category: 'Education',
-        achievements: [
-            'Developed course management system',
-            'Created interactive learning modules',
-            'Implemented progress tracking',
-            'Optimized for mobile learning'
-        ],
-        impact: 'Enabled online Kazakh language learning for students',
-        status: 'Completed',
-        featured: true
-    }
-];
+import Toigan from '../../assets/images/toigan.png';
 
 function Information() {
     const [visibleCards, setVisibleCards] = useState([]);
@@ -72,6 +30,97 @@ function Information() {
     const [imageScale, setImageScale] = useState(1);
     const [imageRotation, setImageRotation] = useState(0);
     const sectionRef = useRef(null);
+    const { t } = useLanguage();
+
+    const getWorkExperience = () => [
+        {
+            id: '1',
+            company: 'KazMunayGaz',
+            position: t('experience.kmg.position'),
+            period: '2024',
+            location: 'Astana, Kazakhstan',
+            image: KMG,
+            description: t('experience.kmg.description'),
+            technologies: ['JavaScript', 'HTML5', 'CSS3', 'Chart.js', 'Responsive Design'],
+            type: 'Internship',
+            category: t('experience.kmg.category'),
+            achievements: Array.isArray(t('experience.kmg.achievements')) ? t('experience.kmg.achievements') : [],
+            impact: t('experience.kmg.impact'),
+            status: 'Completed',
+            featured: true,
+            hasLiveDemo: false
+        },
+        {
+            id: '2',
+            company: 'Seed School',
+            position: t('experience.seed.position'),
+            period: '2025',
+            location: 'Astana, Kazakhstan',
+            image: Seed,
+            description: t('experience.seed.description'),
+            technologies: ['React', 'JavaScript', 'CSS3', 'Educational UX', 'Mobile-First'],
+            type: 'Contract',
+            category: t('experience.seed.category'),
+            achievements: Array.isArray(t('experience.seed.achievements')) ? t('experience.seed.achievements') : [],
+            impact: t('experience.seed.impact'),
+            status: 'Completed',
+            featured: true,
+            hasLiveDemo: false
+        },
+        {
+            id: '3',
+            company: 'MDEA.KZ',
+            position: t('experience.mdea.position'),
+            period: '2025',
+            location: 'Astana, Kazakhstan',
+            image: null,
+            description: t('experience.mdea.description'),
+            technologies: ['React', 'JavaScript', 'CSS3', 'E-commerce', 'Admin Panel'],
+            type: 'Contract',
+            category: t('experience.mdea.category'),
+            achievements: Array.isArray(t('experience.mdea.achievements')) ? t('experience.mdea.achievements') : [],
+            impact: t('experience.mdea.impact'),
+            status: 'In Development',
+            featured: false,
+            hasLiveDemo: false
+        },
+        {
+            id: '4',
+            company: 'Toigan Food',
+            position: t('experience.toigan.position'),
+            period: '2025',
+            location: 'Astana, Kazakhstan',
+            image: Toigan,
+            description: t('experience.toigan.description'),
+            technologies: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'Mobile-First'],
+            type: 'Contract',
+            category: t('experience.toigan.category'),
+            achievements: Array.isArray(t('experience.toigan.achievements')) ? t('experience.toigan.achievements') : [],
+            impact: t('experience.toigan.impact'),
+            status: 'Completed',
+            featured: true,
+            hasLiveDemo: true,
+            liveUrl: 'https://toiganfood.github.io/menu',
+            githubUrl: 'https://github.com/ToiganFood/menu'
+        },
+        {
+            id: '5',
+            company: 'ArtTech',
+            position: t('experience.arttech.position'),
+            period: '2025',
+            location: 'Kostanay, Kazakhstan',
+            image: null,
+            description: t('experience.arttech.description'),
+            technologies: ['Python', 'Telegram Bot API', 'Bitrix CRM', 'Database', 'Automation'],
+            type: 'Contract',
+            category: t('experience.arttech.category'),
+            achievements: Array.isArray(t('experience.arttech.achievements')) ? t('experience.arttech.achievements') : [],
+            impact: t('experience.arttech.impact'),
+            status: 'Completed',
+            featured: true,
+            hasLiveDemo: false
+        }
+    ];
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -140,32 +189,105 @@ function Information() {
         setImageRotation(0);
     };
 
+    const renderProjectImage = (experience) => {
+        if (experience.image) {
+            return (
+                <div className="experience-image-section">
+                    <div className="company-image">
+                        <img src={experience.image} alt={`${experience.company} project`} />
+                        <div className="image-overlay">
+                            <div className="company-logo">
+                                <span>{experience.company[0]}</span>
+                            </div>
+                            <Button
+                                type="primary"
+                                shape="circle"
+                                size="large"
+                                icon={<EyeOutlined />}
+                                className="view-image-btn"
+                                onClick={() => openImageModal(experience.image, experience.company)}
+                                title={t('experience.viewImage')}
+                            />
+                        </div>
+                    </div>
+                </div>
+            );
+        } else {
+            return (
+                <div className="experience-image-section">
+                    <div className="company-image no-image">
+                        <div className="company-logo-large">
+                            <span>{experience.company[0]}</span>
+                        </div>
+                        <div className="no-image-text">
+                            <span>{t('experience.projectDetailsAvailable')}</span>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+    };
+
+    const renderProjectLinks = (experience) => {
+        if (experience.hasLiveDemo) {
+            return (
+                <div className="project-links-section">
+                    <div className="project-links">
+                        <a 
+                            href={experience.liveUrl} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="project-link-btn live"
+                        >
+                            <GlobalOutlined />
+                            <span>{t('projects.liveDemo')}</span>
+                        </a>
+                        {experience.githubUrl && (
+                            <a 
+                                href={experience.githubUrl} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="project-link-btn github"
+                            >
+                                <CodeOutlined />
+                                <span>{t('projects.code')}</span>
+                            </a>
+                        )}
+                    </div>
+                </div>
+            );
+        }
+        return null;
+    };
+
+    const workExperience = getWorkExperience();
+
     return (
         <div className="modern-experience-section" ref={sectionRef}>
             <div className="experience-header">
-                <h2>Professional Experience</h2>
-                <p>Real-world projects and collaborations with companies</p>
+                <h2>{t('experience.title')}</h2>
+                <p>{t('experience.description')}</p>
                 
                 <div className="experience-summary">
                     <div className="summary-item">
                         <TeamOutlined />
                         <div className="summary-content">
-                            <span className="summary-number">2</span>
-                            <span className="summary-label">Companies</span>
+                            <span className="summary-number">5</span>
+                            <span className="summary-label">{t('experience.companies')}</span>
                         </div>
                     </div>
                     <div className="summary-item">
                         <RocketOutlined />
                         <div className="summary-content">
-                            <span className="summary-number">3</span>
-                            <span className="summary-label">Projects</span>
+                            <span className="summary-number">8</span>
+                            <span className="summary-label">{t('experience.projects')}</span>
                         </div>
                     </div>
                     <div className="summary-item">
                         <TrophyOutlined />
                         <div className="summary-content">
                             <span className="summary-number">100%</span>
-                            <span className="summary-label">Success Rate</span>
+                            <span className="summary-label">{t('experience.successRate')}</span>
                         </div>
                     </div>
                 </div>
@@ -187,25 +309,7 @@ function Information() {
                                 </div>
                             )}
 
-                            <div className="experience-image-section">
-                                <div className="company-image">
-                                    <img src={experience.image} alt={`${experience.company} project`} />
-                                    <div className="image-overlay">
-                                        <div className="company-logo">
-                                            <span>{experience.company[0]}</span>
-                                        </div>
-                                        <Button
-                                            type="primary"
-                                            shape="circle"
-                                            size="large"
-                                            icon={<EyeOutlined />}
-                                            className="view-image-btn"
-                                            onClick={() => openImageModal(experience.image, experience.company)}
-                                            title="View full image"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
+                            {renderProjectImage(experience)}
 
                             <div className="experience-content">
                                 <div className="experience-header-info">
@@ -242,7 +346,7 @@ function Information() {
                                 <div className="technologies-section">
                                     <div className="tech-header">
                                         <CodeOutlined />
-                                        <span>Technologies Used</span>
+                                        <span>{t('experience.technologiesUsed')}</span>
                                     </div>
                                     <div className="tech-stack">
                                         {experience.technologies.map((tech, techIndex) => (
@@ -254,7 +358,7 @@ function Information() {
                                 </div>
 
                                 <div className="achievements-section">
-                                    <h4>Key Achievements</h4>
+                                    <h4>{t('experience.keyAchievements')}</h4>
                                     <ul className="achievements-list">
                                         {experience.achievements.map((achievement, achIndex) => (
                                             <li key={achIndex} className="achievement-item">
@@ -265,12 +369,14 @@ function Information() {
                                     </ul>
                                 </div>
 
+                                {renderProjectLinks(experience)}
+
                                 <div className="experience-footer">
                                     <div className="impact-statement">
-                                        <strong>Impact:</strong> {experience.impact}
+                                        <strong>{t('experience.impact')}</strong> {experience.impact}
                                     </div>
-                                    <div className={`status-badge ${experience.status.toLowerCase()}`}>
-                                        <span>{experience.status}</span>
+                                    <div className={`status-badge ${experience.status.toLowerCase().replace(' ', '-')}`}>
+                                        <span>{experience.status === 'Completed' ? t('experience.completed') : t('experience.inDevelopment')}</span>
                                     </div>
                                 </div>
                             </div>
@@ -300,7 +406,7 @@ function Information() {
                     <>
                         <div className="modal-header">
                             <div className="modal-title">
-                                <h3>{selectedImage.company} Project Screenshot</h3>
+                                <h3>{selectedImage.company} {t('experience.projectScreenshot')}</h3>
                             </div>
                             <div className="modal-controls">
                                 <Button

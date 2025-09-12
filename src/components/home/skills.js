@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Row, Col, Progress } from 'antd';
+import { useLanguage } from '../context/languageContext';
 
 function Skills() {
     const [isVisible, setIsVisible] = useState(false);
     const [animatedValues, setAnimatedValues] = useState({});
     const sectionRef = useRef(null);
+    const { t } = useLanguage();
 
     const skills = [
         { name: 'HTML & CSS', level: 90, color: '#e34c26' },
@@ -58,8 +60,8 @@ function Skills() {
         <div className="skills-section" ref={sectionRef}>
             <div className="container">
                 <div className="skills-header">
-                    <h2>Technical Skills</h2>
-                    <p>Technologies I work with and my proficiency levels</p>
+                    <h2>{t('skills.title')}</h2>
+                    <p>{t('skills.description')}</p>
                 </div>
                 
                 <Row gutter={[40, 40]}>
@@ -92,25 +94,25 @@ function Skills() {
                         <Col xs={12} md={6}>
                             <div className="stat-item">
                                 <div className="stat-number2">2+</div>
-                                <div className="stat-label2">Years Learning</div>
+                                <div className="stat-label2">{t('skills.yearsLearning')}</div>
                             </div>
                         </Col>
                         <Col xs={12} md={6}>
                             <div className="stat-item">
                                 <div className="stat-number2">10+</div>
-                                <div className="stat-label2">Projects</div>
+                                <div className="stat-label2">{t('skills.projects')}</div>
                             </div>
                         </Col>
                         <Col xs={12} md={6}>
                             <div className="stat-item">
-                                <div className="stat-number2">2</div>
-                                <div className="stat-label2">Companies</div>
+                                <div className="stat-number2">5</div>
+                                <div className="stat-label2">{t('skills.companies')}</div>
                             </div>
                         </Col>
                         <Col xs={12} md={6}>
                             <div className="stat-item">
                                 <div className="stat-number2">B2</div>
-                                <div className="stat-label2">English Level</div>
+                                <div className="stat-label2">{t('skills.englishLevel')}</div>
                             </div>
                         </Col>
                     </Row>

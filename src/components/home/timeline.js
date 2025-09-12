@@ -1,58 +1,74 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Row, Col } from 'antd';
 import { CalendarOutlined, BookOutlined, CodeOutlined, RocketOutlined } from '@ant-design/icons';
+import { useLanguage } from '../context/languageContext';
 
 function Timeline() {
     const [visibleItems, setVisibleItems] = useState([]);
     const timelineRef = useRef(null);
+    const { t } = useLanguage();
 
-    const timelineData = [
-        {
-            id: 1,
-            year: "2022",
-            title: "Started Learning Programming",
-            description: "Began my journey with HTML, CSS and basic JavaScript. Discovered passion for web development.",
-            icon: <BookOutlined />,
-            type: "education",
-            achievements: ["First HTML page", "CSS animations", "JavaScript basics"]
-        },
-        {
-            id: 2,
-            year: "2023",
-            title: "Entered Astana IT University",
-            description: "Started studying Software Engineering. Deepened knowledge in programming fundamentals and algorithms.",
-            icon: <CalendarOutlined />,
-            type: "education",
-            achievements: ["University admission", "Data structures", "OOP concepts"]
-        },
-        {
-            id: 3,
-            year: "2023",
-            title: "First React Projects",
-            description: "Built my first React applications including sneaker shop and crypto company websites.",
-            icon: <CodeOutlined />,
-            type: "project",
-            achievements: ["React mastery", "Component architecture", "State management"]
-        },
-        {
-            id: 4,
-            year: "2024",
-            title: "Work Experience",
-            description: "Gained practical experience working with KazMunayGaz and SeedSchool on real projects.",
-            icon: <RocketOutlined />,
-            type: "work",
-            achievements: ["Professional projects", "Team collaboration", "Real-world solutions"]
-        },
-        {
-            id: 5,
-            year: "2025",
-            title: "Current Goals",
-            description: "Learning TypeScript, improving backend skills, and preparing for career as a full-stack developer.",
-            icon: <RocketOutlined />,
-            type: "future",
-            achievements: ["TypeScript learning", "Backend development", "Career preparation"]
-        }
-    ];
+    const getTimelineData = () => {
+        const timelineItems = t('timeline.items');
+        
+        return [
+            {
+                id: 1,
+                year: "2022",
+                title: Array.isArray(timelineItems) && timelineItems[0] ? timelineItems[0].title : 'Started Learning Programming',
+                description: Array.isArray(timelineItems) && timelineItems[0] ? timelineItems[0].description : 'Began my journey with HTML, CSS and basic JavaScript.',
+                icon: <BookOutlined />,
+                type: "education",
+                achievements: Array.isArray(timelineItems) && timelineItems[0] && Array.isArray(timelineItems[0].achievements) 
+                    ? timelineItems[0].achievements 
+                    : ['First HTML page', 'CSS animations', 'JavaScript basics']
+            },
+            {
+                id: 2,
+                year: "2023",
+                title: Array.isArray(timelineItems) && timelineItems[1] ? timelineItems[1].title : 'Entered Astana IT University',
+                description: Array.isArray(timelineItems) && timelineItems[1] ? timelineItems[1].description : 'Started studying Software Engineering.',
+                icon: <CalendarOutlined />,
+                type: "education",
+                achievements: Array.isArray(timelineItems) && timelineItems[1] && Array.isArray(timelineItems[1].achievements) 
+                    ? timelineItems[1].achievements 
+                    : ['University admission', 'Data structures', 'OOP concepts']
+            },
+            {
+                id: 3,
+                year: "2023",
+                title: Array.isArray(timelineItems) && timelineItems[2] ? timelineItems[2].title : 'First React Projects',
+                description: Array.isArray(timelineItems) && timelineItems[2] ? timelineItems[2].description : 'Built my first React applications.',
+                icon: <CodeOutlined />,
+                type: "project",
+                achievements: Array.isArray(timelineItems) && timelineItems[2] && Array.isArray(timelineItems[2].achievements) 
+                    ? timelineItems[2].achievements 
+                    : ['React mastery', 'Component architecture', 'State management']
+            },
+            {
+                id: 4,
+                year: "2024",
+                title: Array.isArray(timelineItems) && timelineItems[3] ? timelineItems[3].title : 'Work Experience',
+                description: Array.isArray(timelineItems) && timelineItems[3] ? timelineItems[3].description : 'Gained practical experience working with companies.',
+                icon: <RocketOutlined />,
+                type: "work",
+                achievements: Array.isArray(timelineItems) && timelineItems[3] && Array.isArray(timelineItems[3].achievements) 
+                    ? timelineItems[3].achievements 
+                    : ['Professional projects', 'Team collaboration', 'Real-world solutions']
+            },
+            {
+                id: 5,
+                year: "2025",
+                title: Array.isArray(timelineItems) && timelineItems[4] ? timelineItems[4].title : 'Current Goals',
+                description: Array.isArray(timelineItems) && timelineItems[4] ? timelineItems[4].description : 'Learning TypeScript and preparing for full-stack career.',
+                icon: <RocketOutlined />,
+                type: "future",
+                achievements: Array.isArray(timelineItems) && timelineItems[4] && Array.isArray(timelineItems[4].achievements) 
+                    ? timelineItems[4].achievements 
+                    : ['TypeScript learning', 'Backend development', 'Career preparation']
+            }
+        ];
+    };
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -83,12 +99,14 @@ function Timeline() {
         return colors[type] || '#27c4ff';
     };
 
+    const timelineData = getTimelineData();
+
     return (
         <div className="timeline-section">
             <div className="container">
                 <div className="timeline-header">
-                    <h2>My Journey</h2>
-                    <p>The path that led me to become a software developer</p>
+                    <h2>{t('timeline.title')}</h2>
+                    <p>{t('timeline.description')}</p>
                 </div>
 
                 <div className="timeline-container" ref={timelineRef}>

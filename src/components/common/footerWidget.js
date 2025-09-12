@@ -9,8 +9,11 @@ import {
     CalendarOutlined,
     UserOutlined
 } from '@ant-design/icons';
+import { useLanguage } from '../context/languageContext';
 
 function FooterWidget() {
+    const { t } = useLanguage();
+
     const skills = [
         { name: 'React', icon: <CodeOutlined />, color: '#61dafb' },
         { name: 'JavaScript', icon: <GlobalOutlined />, color: '#f7df1e' },
@@ -38,7 +41,7 @@ function FooterWidget() {
                 <Row gutter={[40, 40]}>
                     <Col xs={24} sm={12} lg={6}>
                         <div className='footer-section'>
-                            <h3>Core Technologies</h3>
+                            <h3>{t('footer.coreSkills')}</h3>
                             <div className='skills-grid'>
                                 {skills.map((skill, index) => (
                                     <div key={index} className='skill-tag'>
@@ -54,7 +57,7 @@ function FooterWidget() {
                     
                     <Col xs={24} sm={12} lg={6}>
                         <div className='footer-section'>
-                            <h3>About Me</h3>
+                            <h3>{t('footer.aboutMe')}</h3>
                             <div className='info-list'>
                                 {personalInfo.map((item, index) => (
                                     <div key={index} className='info-item'>
@@ -71,7 +74,7 @@ function FooterWidget() {
                     
                     <Col xs={24} sm={12} lg={6}>
                         <div className='footer-section'>
-                            <h3>Current Status</h3>
+                            <h3>{t('footer.currentStatus')}</h3>
                             <div className='achievements-list'>
                                 {achievements.map((achievement, index) => (
                                     <div key={index} className='achievement-item'>
@@ -85,17 +88,17 @@ function FooterWidget() {
                     
                     <Col xs={24} sm={12} lg={6}>
                         <div className='footer-section'>
-                            <h3>Let's Connect</h3>
+                            <h3>{t('footer.letsConnect')}</h3>
                             <p className='connect-description'>
-                                Always excited to collaborate on interesting projects and learn new technologies.
+                                {t('footer.connectDescription')}
                             </p>
                             <div className='availability-status'>
                                 <div className='status-indicator'>
                                     <TrophyOutlined />
-                                    <span>Open to Opportunities</span>
+                                    <span>{t('footer.openToOpportunities')}</span>
                                 </div>
                                 <p className='status-text'>
-                                    Currently seeking internship and project opportunities
+                                    {t('footer.statusText')}
                                 </p>
                             </div>
                         </div>

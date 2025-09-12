@@ -1,6 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import { Button, Drawer, Badge } from 'antd';
+import { useLanguage } from '../context/languageContext';
+import LanguageSwitcher from './LanguageSwitcher';
 
 import {
     PhoneOutlined,
@@ -12,7 +14,7 @@ import {
     SunOutlined,
     MoonOutlined,
     CloseOutlined
-  } from '@ant-design/icons';
+} from '@ant-design/icons';
 
 function AppHeader() {
     const [open, setOpen] = useState(false);
@@ -21,6 +23,8 @@ function AppHeader() {
         const saved = localStorage.getItem('theme');
         return saved ? JSON.parse(saved) : false;
     });
+
+    const { t } = useLanguage();
 
     const showDrawer = () => {
         setOpen(true);
@@ -88,13 +92,15 @@ function AppHeader() {
                                 </a>
                             </div>
                             
+                            <LanguageSwitcher />
+                            
                             <div className="theme-switch">
                                 <Button
                                     type="text"
                                     onClick={toggleTheme}
                                     className={`theme-toggle-button ${isDark ? 'dark' : 'light'}`}
                                     icon={isDark ? <SunOutlined /> : <MoonOutlined />}
-                                    title={isDark ? 'Переключить на светлую тему' : 'Переключить на темную тему'}
+                                    title={isDark ? t('topbar.switchToLight') : t('topbar.switchToDark')}
                                 />
                             </div>
                         </div>
@@ -111,7 +117,7 @@ function AppHeader() {
                                 <span className="logo-accent">prostakk</span>
                             </NavLink>
                             <div className="status-badge">
-                                <Badge status="success" text="Available for work" />
+                                <Badge status="success" text={t('topbar.availableForWork')} />
                             </div>
                         </div>
 
@@ -119,17 +125,17 @@ function AppHeader() {
                             <ul className="nav-list">
                                 <li className="nav-item">
                                     <NavLink to='/' className="nav-link">
-                                        <span>Home</span>
+                                        <span>{t('nav.home')}</span>
                                     </NavLink>
                                 </li>
                                 <li className="nav-item">
                                     <NavLink to='/about' className="nav-link">
-                                        <span>About</span>
+                                        <span>{t('nav.about')}</span>
                                     </NavLink>
                                 </li>
                                 <li className="nav-item">
                                     <NavLink to='/faq' className="nav-link">
-                                        <span>FAQ</span>
+                                        <span>{t('nav.faq')}</span>
                                     </NavLink>
                                 </li>
                             </ul>
@@ -167,14 +173,14 @@ function AppHeader() {
             >
                 <nav className="mobile-nav">
                     <ul className="mobile-nav-list">
-                        <li><NavLink onClick={onClose} to='/' className="mobile-nav-link">Home</NavLink></li>
-                        <li><NavLink onClick={onClose} to='/about' className="mobile-nav-link">About</NavLink></li>
-                        <li><NavLink onClick={onClose} to='/faq' className="mobile-nav-link">FAQ</NavLink></li>
+                        <li><NavLink onClick={onClose} to='/' className="mobile-nav-link">{t('nav.home')}</NavLink></li>
+                        <li><NavLink onClick={onClose} to='/about' className="mobile-nav-link">{t('nav.about')}</NavLink></li>
+                        <li><NavLink onClick={onClose} to='/faq' className="mobile-nav-link">{t('nav.faq')}</NavLink></li>
                     </ul>
                 </nav>
                 
                 <div className="mobile-contact">
-                    <h4>Get in touch</h4>
+                    <h4>{t('contact.getInTouch')}</h4>
                     <div className="mobile-contact-links">
                         <a href="tel:+7(775)-090-70-13" className="mobile-contact-link">
                             <PhoneOutlined />
@@ -199,6 +205,10 @@ function AppHeader() {
                             <InstagramFilled />
                         </a>
                     </div>
+                </div>
+
+                <div className="mobile-language">
+                    <LanguageSwitcher />
                 </div>
             </Drawer>
         </>

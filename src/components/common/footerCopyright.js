@@ -8,8 +8,11 @@ import {
     CopyrightOutlined,
     ArrowUpOutlined
 } from '@ant-design/icons';
+import { useLanguage } from '../context/languageContext';
 
 function FooterCopyright() {
+    const { t } = useLanguage();
+
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -27,12 +30,12 @@ function FooterCopyright() {
                         <div className="copyright-content">
                             <div className="copyright-text">
                                 <CopyrightOutlined />
-                                <span>{currentYear} RakhatProstakk. All rights reserved.</span>
+                                <span>{currentYear} {t('footer.copyright')}</span>
                             </div>
                             <div className="made-with-love">
-                                <span>Made with</span>
+                                <span>{t('footer.madeWith')}</span>
                                 <HeartFilled className="heart-icon" />
-                                <span>using React & Ant Design</span>
+                                <span>{t('footer.using')}</span>
                             </div>
                         </div>
                     </Col>
@@ -72,10 +75,10 @@ function FooterCopyright() {
                             <button 
                                 className="back-to-top-btn"
                                 onClick={scrollToTop}
-                                title="Back to top"
+                                title={t('footer.backToTop')}
                             >
                                 <ArrowUpOutlined />
-                                <span>Back to Top</span>
+                                <span>{t('footer.backToTop')}</span>
                             </button>
                         </div>
                     </Col>

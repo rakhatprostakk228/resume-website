@@ -8,13 +8,14 @@ import {
     StarOutlined,
     CalendarOutlined
 } from '@ant-design/icons';
+import { useLanguage } from '../context/languageContext';
 
 const projects = [
     {
         id: '1',
         image: require('../../assets/images/sneakerShop.png'),
-        title: 'Sneaker Shop - E-commerce Platform',
-        description: 'Modern React e-commerce application with shopping cart, product filtering, and responsive design. My first major React project that showcases component architecture and state management.',
+        titleKey: 'projects.sneakerTitle',
+        descriptionKey: 'projects.sneakerDesc',
         technologies: ['React', 'CSS3', 'JavaScript', 'Responsive Design'],
         category: 'E-commerce',
         status: 'Completed',
@@ -28,8 +29,8 @@ const projects = [
     {
         id: '2',
         image: require('../../assets/images/crypto.jpg'),
-        title: 'Crypto Landing Page',
-        description: 'High-converting landing page for a cryptocurrency company featuring smooth animations, modern UI/UX design, and optimized for sales conversion.',
+        titleKey: 'projects.cryptoTitle',
+        descriptionKey: 'projects.cryptoDesc',
         technologies: ['HTML5', 'CSS3', 'JavaScript', 'GSAP Animations'],
         category: 'Landing Page',
         status: 'Completed',
@@ -43,8 +44,8 @@ const projects = [
     {
         id: '3',
         image: require('../../assets/images/animation.png'),
-        title: 'CSS Animation Showcase',
-        description: 'Creative showcase of CSS animations and transitions. Experimental project focusing on advanced CSS techniques, keyframes, and interactive animations.',
+        titleKey: 'projects.animationTitle',
+        descriptionKey: 'projects.animationDesc',
         technologies: ['CSS3', 'HTML5', 'Animation', 'Keyframes'],
         category: 'Experimental',
         status: 'Completed',
@@ -61,6 +62,7 @@ function RecentProducts() {
     const [visibleCards, setVisibleCards] = useState([]);
     const [hoveredCard, setHoveredCard] = useState(null);
     const sectionRef = useRef(null);
+    const { t } = useLanguage();
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -99,8 +101,8 @@ function RecentProducts() {
             <div className="container">
                 <div className="projects-header">
                     <div className="header-content">
-                        <h2>Featured Projects</h2>
-                        <p>Explore my latest web development projects and experiments</p>
+                        <h2>{t('projects.title')}</h2>
+                        <p>{t('projects.description')}</p>
                     </div>
                 </div>
 
@@ -117,12 +119,12 @@ function RecentProducts() {
                             {project.featured && (
                                 <div className="featured-badge">
                                     <StarOutlined />
-                                    <span>Featured</span>
+                                    <span>{t('projects.featured')}</span>
                                 </div>
                             )}
 
                             <div className="project-image-container">
-                                <img src={project.image} alt={project.title} />
+                                <img src={project.image} alt={t(project.titleKey)} />
                                 <div className="image-overlay">
                                     <div className="overlay-content">
                                         <div className="project-links">
@@ -133,7 +135,7 @@ function RecentProducts() {
                                                 className="project-link-btn live"
                                             >
                                                 <GlobalOutlined />
-                                                <span>Live Demo</span>
+                                                <span>{t('projects.liveDemo')}</span>
                                             </a>
                                             <a 
                                                 href={project.links.github} 
@@ -142,7 +144,7 @@ function RecentProducts() {
                                                 className="project-link-btn github"
                                             >
                                                 <GithubOutlined />
-                                                <span>Code</span>
+                                                <span>{t('projects.code')}</span>
                                             </a>
                                         </div>
                                     </div>
@@ -160,13 +162,13 @@ function RecentProducts() {
                                     </div>
                                 </div>
 
-                                <h3 className="project-title">{project.title}</h3>
-                                <p className="project-description">{project.description}</p>
+                                <h3 className="project-title">{t(project.titleKey)}</h3>
+                                <p className="project-description">{t(project.descriptionKey)}</p>
 
                                 <div className="project-tech">
                                     <div className="tech-label">
                                         <CodeOutlined />
-                                        <span>Technologies:</span>
+                                        <span>{t('projects.technologies')}</span>
                                     </div>
                                     <div className="tech-tags">
                                         {project.technologies.map((tech, techIndex) => (
@@ -180,7 +182,7 @@ function RecentProducts() {
                                 <div className="project-footer">
                                     <div className={`status ${project.status.toLowerCase()}`}>
                                         <RocketOutlined />
-                                        <span>{project.status}</span>
+                                        <span>{t('projects.completed')}</span>
                                     </div>
                                 </div>
                             </div>
