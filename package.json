@@ -1,9 +1,10 @@
 {
-  "homepage": "https://rakhatprostakk228.github.io/resume-website",
   "name": "project",
+  "homepage": "https://rakhatprostakk228.github.io/resume-website",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ant-design/cssinjs": "^1.24.0",
     "@emailjs/browser": "^4.4.1",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -42,6 +43,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.1.1"
+    "gh-pages": "^6.3.0"
   }
 }
