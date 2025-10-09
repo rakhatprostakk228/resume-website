@@ -54,6 +54,7 @@ const translations = {
             impact: 'Impact:',
             completed: 'Completed',
             inDevelopment: 'In Development',
+            nearCompletion: 'Near Completion',
             viewImage: 'View full image',
             projectDetailsAvailable: 'Project Details Available',
             projectScreenshot: 'Project Screenshot',
@@ -78,12 +79,26 @@ const translations = {
                 achievements: ['Built complete e-commerce solution', 'Implemented product management system', 'Created responsive user interface', 'Developed admin functionality'],
                 impact: 'Enabled online furniture sales and inventory management'
             },
-            toigan: {
-                position: 'Web Developer',
-                description: 'Created an interactive menu website for a coffee shop with modern design and user-friendly interface. Implemented responsive layout optimized for mobile ordering experience.',
+            alladin: {
+                position: 'Frontend Developer',
+                description: 'Developed a modern hotel booking website with payment integration. Created responsive design and implemented booking system for hotel rooms in Almaty.',
+                category: 'Hospitality & Tourism',
+                achievements: ['Built booking system', 'Integrated payment gateway', 'Created responsive design', 'Optimized user experience'],
+                impact: 'Enabled online hotel room booking and payment processing'
+            },
+            diplomai: {
+                position: 'Full-Stack Developer',
+                description: 'Developed complete web platform using Vue.js for frontend and Node.js for backend. Contract project focused on AI-powered diploma assistance for students.',
+                category: 'Education & AI',
+                achievements: ['Full-stack development', 'Backend with Node.js', 'Frontend with Vue.js', 'AI integration'],
+                impact: 'Created innovative educational platform with AI capabilities'
+            },
+            goodfood: {
+                position: 'Frontend Developer',
+                description: 'Developing restaurant business platform using React. Collaborated with backend developer on food delivery and restaurant management system for Almaty business.',
                 category: 'Food & Beverage',
-                achievements: ['Developed interactive menu system', 'Created mobile-optimized design', 'Implemented smooth user experience', 'Optimized loading performance'],
-                impact: 'Enhanced customer experience and simplified menu browsing'
+                achievements: ['React development', 'Team collaboration', 'Business platform', 'Restaurant features'],
+                impact: 'Building modern platform for restaurant business in Almaty'
             },
             arttech: {
                 position: 'Telegram Bot Developer',
@@ -302,6 +317,7 @@ const translations = {
             impact: 'Влияние:',
             completed: 'Завершено',
             inDevelopment: 'В разработке',
+            nearCompletion: 'Почти завершено',
             viewImage: 'Посмотреть изображение',
             projectDetailsAvailable: 'Детали проекта доступны',
             projectScreenshot: 'Скриншот проекта',
@@ -326,12 +342,26 @@ const translations = {
                 achievements: ['Построил полное решение электронной коммерции', 'Внедрил систему управления товарами', 'Создал адаптивный пользовательский интерфейс', 'Разработал функциональность администратора'],
                 impact: 'Обеспечил онлайн-продажи мебели и управление инвентарем'
             },
-            toigan: {
-                position: 'Веб-разработчик',
-                description: 'Создал интерактивный сайт меню для кофейни с современным дизайном.',
+            alladin: {
+                position: 'Frontend разработчик',
+                description: 'Разработал современный сайт бронирования отеля с интеграцией оплаты. Создал адаптивный дизайн и реализовал систему бронирования номеров для отеля в Алматы.',
+                category: 'Гостиничный бизнес',
+                achievements: ['Построил систему бронирования', 'Интегрировал платежную систему', 'Создал адаптивный дизайн', 'Оптимизировал пользовательский опыт'],
+                impact: 'Обеспечил онлайн-бронирование номеров и обработку платежей'
+            },
+            diplomai: {
+                position: 'Full-Stack разработчик',
+                description: 'Разработал полноценную веб-платформу используя Vue.js для фронтенда и Node.js для бэкенда. Контрактный проект, ориентированный на помощь студентам в написании дипломов с использованием AI.',
+                category: 'Образование и AI',
+                achievements: ['Full-stack разработка', 'Бэкенд на Node.js', 'Фронтенд на Vue.js', 'Интеграция AI'],
+                impact: 'Создал инновационную образовательную платформу с возможностями AI'
+            },
+            goodfood: {
+                position: 'Frontend разработчик',
+                description: 'Разрабатываю платформу для ресторанного бизнеса на React. Сотрудничаю с бэкенд разработчиком над системой доставки еды и управления рестораном для бизнеса в Алматы.',
                 category: 'Еда и напитки',
-                achievements: ['Разработал интерактивную систему меню', 'Создал мобильно-оптимизированный дизайн', 'Реализовал плавный пользовательский опыт', 'Оптимизировал производительность загрузки'],
-                impact: 'Улучшил клиентский опыт и упростил просмотр меню'
+                achievements: ['React разработка', 'Командная работа', 'Бизнес-платформа', 'Функции для ресторанов'],
+                impact: 'Создаем современную платформу для ресторанного бизнеса в Алматы'
             },
             arttech: {
                 position: 'Разработчик Telegram ботов',

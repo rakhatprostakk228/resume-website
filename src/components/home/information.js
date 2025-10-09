@@ -20,7 +20,9 @@ import { useLanguage } from '../context/languageContext';
 
 import KMG from '../../assets/images/kmg.jpg';
 import Seed from '../../assets/images/seed.jpg';
-import Toigan from '../../assets/images/toigan.png';
+import Alladin from '../../assets/images/alladin-hotel.png';
+import DiplomAI from '../../assets/images/diplomai.png';
+import GoodFood from '../../assets/images/goodfood.png';
 
 function Information() {
     const [visibleCards, setVisibleCards] = useState([]);
@@ -80,31 +82,66 @@ function Information() {
             category: t('experience.mdea.category'),
             achievements: Array.isArray(t('experience.mdea.achievements')) ? t('experience.mdea.achievements') : [],
             impact: t('experience.mdea.impact'),
-            status: 'In Development',
+            status: 'Completed',
             featured: false,
             hasLiveDemo: false
         },
         {
             id: '4',
-            company: 'Toigan Food',
-            position: t('experience.toigan.position'),
+            company: 'Alladin Hotel',
+            position: t('experience.alladin.position'),
             period: '2025',
-            location: 'Astana, Kazakhstan',
-            image: Toigan,
-            description: t('experience.toigan.description'),
-            technologies: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'Mobile-First'],
+            location: 'Almaty, Kazakhstan',
+            image: Alladin,
+            description: t('experience.alladin.description'),
+            technologies: ['React', 'JavaScript', 'CSS3', 'Payment Integration', 'Booking System'],
             type: 'Contract',
-            category: t('experience.toigan.category'),
-            achievements: Array.isArray(t('experience.toigan.achievements')) ? t('experience.toigan.achievements') : [],
-            impact: t('experience.toigan.impact'),
-            status: 'Completed',
+            category: t('experience.alladin.category'),
+            achievements: Array.isArray(t('experience.alladin.achievements')) ? t('experience.alladin.achievements') : [],
+            impact: t('experience.alladin.impact'),
+            status: 'Near Completion',
             featured: true,
             hasLiveDemo: true,
-            liveUrl: 'https://toiganfood.github.io/menu',
-            githubUrl: 'https://github.com/ToiganFood/menu'
+            liveUrl: 'https://alladinhotel.kz/'
         },
         {
             id: '5',
+            company: 'DiplomAI',
+            position: t('experience.diplomai.position'),
+            period: '2025',
+            location: 'Astana, Kazakhstan',
+            image: DiplomAI,
+            description: t('experience.diplomai.description'),
+            technologies: ['Vue.js', 'Node.js', 'JavaScript', 'Full-Stack', 'AI Integration'],
+            type: 'Contract',
+            category: t('experience.diplomai.category'),
+            achievements: Array.isArray(t('experience.diplomai.achievements')) ? t('experience.diplomai.achievements') : [],
+            impact: t('experience.diplomai.impact'),
+            status: 'In Development',
+            featured: true,
+            hasLiveDemo: true,
+            liveUrl: 'https://diplomai.kz'
+        },
+        {
+            id: '6',
+            company: 'GoodFood',
+            position: t('experience.goodfood.position'),
+            period: '2025',
+            location: 'Almaty, Kazakhstan',
+            image: GoodFood,
+            description: t('experience.goodfood.description'),
+            technologies: ['React', 'JavaScript', 'CSS3', 'Restaurant Platform', 'Responsive Design'],
+            type: 'Contract',
+            category: t('experience.goodfood.category'),
+            achievements: Array.isArray(t('experience.goodfood.achievements')) ? t('experience.goodfood.achievements') : [],
+            impact: t('experience.goodfood.impact'),
+            status: 'In Development',
+            featured: false,
+            hasLiveDemo: true,
+            liveUrl: 'https://goodfood.kz/?location=6dbdefef'
+        },
+        {
+            id: '7',
             company: 'ArtTech',
             position: t('experience.arttech.position'),
             period: '2025',
@@ -149,7 +186,8 @@ function Information() {
         const colors = {
             'Internship': '#1890ff',
             'Contract': '#52c41a',
-            'Full-time': '#722ed1'
+            'Full-time': '#722ed1',
+            'Personal Project': '#fa8c16'
         };
         return colors[type] || '#27c4ff';
     };
@@ -272,14 +310,14 @@ function Information() {
                     <div className="summary-item">
                         <TeamOutlined />
                         <div className="summary-content">
-                            <span className="summary-number">5</span>
+                            <span className="summary-number">7</span>
                             <span className="summary-label">{t('experience.companies')}</span>
                         </div>
                     </div>
                     <div className="summary-item">
                         <RocketOutlined />
                         <div className="summary-content">
-                            <span className="summary-number">8</span>
+                            <span className="summary-number">12+</span>
                             <span className="summary-label">{t('experience.projects')}</span>
                         </div>
                     </div>
@@ -375,8 +413,16 @@ function Information() {
                                     <div className="impact-statement">
                                         <strong>{t('experience.impact')}</strong> {experience.impact}
                                     </div>
-                                    <div className={`status-badge ${experience.status.toLowerCase().replace(' ', '-')}`}>
-                                        <span>{experience.status === 'Completed' ? t('experience.completed') : t('experience.inDevelopment')}</span>
+                                    <div className={`status-badge ${experience.status.toLowerCase().replace(/ /g, '-')}`}>
+                                        <span>
+                                            {experience.status === 'Completed' 
+                                                ? t('experience.completed') 
+                                                : experience.status === 'In Development' 
+                                                ? t('experience.inDevelopment')
+                                                : experience.status === 'Near Completion'
+                                                ? t('experience.nearCompletion')
+                                                : experience.status}
+                                        </span>
                                     </div>
                                 </div>
                             </div>

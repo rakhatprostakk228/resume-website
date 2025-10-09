@@ -6385,3 +6385,15 @@ body {
     min-width: 140px !important;
   }
 }
+
+.status-badge.near-completion {
+  background: #fff7e6;
+  color: #d46b08;
+  border: 1px solid #ffd591;
+}
+
+.dark-theme .status-badge.near-completion {
+  background: #7c3aed;
+  color: #f3e8ff;
+  border: 1px solid #a78bfa;
+}
