@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/resume-website/static/css/main.e286f383.css",
+    "main.js": "/resume-website/static/js/main.0ed733de.js",
+    "static/js/453.5e560239.chunk.js": "/resume-website/static/js/453.5e560239.chunk.js",
+    "static/media/alladin-hotel.png": "/resume-website/static/media/alladin-hotel.438da0045d7d12324f34.png",
+    "static/media/sneakerShop.png": "/resume-website/static/media/sneakerShop.3155b1034573daeefd86.png",
+    "static/media/animation.png": "/resume-website/static/media/animation.c9619fb3d13c86716e80.png",
+    "static/media/diplomai.png": "/resume-website/static/media/diplomai.7b1ebacd5a482a5a2feb.png",
+    "static/media/crypto.jpg": "/resume-website/static/media/crypto.72229cdde008ce371ddd.jpg",
+    "static/media/goodfood.png": "/resume-website/static/media/goodfood.5fc651894f2f1e272145.png",
+    "static/media/kmg.jpg": "/resume-website/static/media/kmg.4944e74b3b29c0600ca5.jpg",
+    "static/media/seed.jpg": "/resume-website/static/media/seed.1f897592fcbafce182fc.jpg",
+    "static/media/me.jpg": "/resume-website/static/media/me.26f79946a846163a0cc5.jpg",
+    "index.html": "/resume-website/index.html",
+    "main.e286f383.css.map": "/resume-website/static/css/main.e286f383.css.map",
+    "main.0ed733de.js.map": "/resume-website/static/js/main.0ed733de.js.map",
+    "453.5e560239.chunk.js.map": "/resume-website/static/js/453.5e560239.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e286f383.css",
+    "static/js/main.0ed733de.js"
+  ]
+}
