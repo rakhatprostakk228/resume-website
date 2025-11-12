@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/resume-website/static/css/main.e286f383.css",
-    "main.js": "/resume-website/static/js/main.0ed733de.js",
+    "main.js": "/resume-website/static/js/main.cea067fe.js",
     "static/js/453.5e560239.chunk.js": "/resume-website/static/js/453.5e560239.chunk.js",
     "static/media/alladin-hotel.png": "/resume-website/static/media/alladin-hotel.438da0045d7d12324f34.png",
     "static/media/sneakerShop.png": "/resume-website/static/media/sneakerShop.3155b1034573daeefd86.png",
@@ -14,11 +14,11 @@
     "static/media/me.jpg": "/resume-website/static/media/me.26f79946a846163a0cc5.jpg",
     "index.html": "/resume-website/index.html",
     "main.e286f383.css.map": "/resume-website/static/css/main.e286f383.css.map",
-    "main.0ed733de.js.map": "/resume-website/static/js/main.0ed733de.js.map",
+    "main.cea067fe.js.map": "/resume-website/static/js/main.cea067fe.js.map",
     "453.5e560239.chunk.js.map": "/resume-website/static/js/453.5e560239.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e286f383.css",
-    "static/js/main.0ed733de.js"
+    "static/js/main.cea067fe.js"
   ]
 }
