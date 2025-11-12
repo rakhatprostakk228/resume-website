@@ -138,7 +138,7 @@ function Information() {
             status: 'In Development',
             featured: false,
             hasLiveDemo: true,
-            liveUrl: 'https://goodfood.kz/?location=6dbdefef'
+            liveUrl: 'hhttps://goodfood.kz/menu/6dbdefef-00d7-4adc-8575-a329a32b3cea'
         },
         {
             id: '7',
