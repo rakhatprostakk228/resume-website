@@ -29,7 +29,7 @@ function FooterWidget() {
     ];
 
     const personalInfo = [
-        { label: 'Age', value: '19 years old', icon: <UserOutlined /> },
+        { label: 'Age', value: '20 years old', icon: <UserOutlined /> },
         { label: 'Location', value: 'Astana, Kazakhstan', icon: <GlobalOutlined /> },
         { label: 'English', value: 'B2 Level', icon: <BookOutlined /> },
         { label: 'Passion', value: 'Web Development', icon: <HeartOutlined /> }

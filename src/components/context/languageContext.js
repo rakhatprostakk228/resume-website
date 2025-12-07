@@ -24,7 +24,7 @@ const translations = {
             title2: ' React Developer',
             title3: ' Frontend Developer',
             title4: ' Web Developer',
-            description: '19-year-old software engineering student from Astana IT University, passionate about creating modern web applications with React and JavaScript.',
+            description: '20-year-old software engineering student from Astana IT University, passionate about creating modern web applications with React and JavaScript.',
             viewWork: 'View My Work',
             scrollToExplore: 'Scroll to explore'
         },
@@ -55,6 +55,7 @@ const translations = {
             completed: 'Completed',
             inDevelopment: 'In Development',
             nearCompletion: 'Near Completion',
+            current: 'Current',
             viewImage: 'View full image',
             projectDetailsAvailable: 'Project Details Available',
             projectScreenshot: 'Project Screenshot',
@@ -106,7 +107,18 @@ const translations = {
                 category: 'Automation & CRM',
                 achievements: ['Built HR recruitment automation bot', 'Developed customer service assistant', 'Integrated with Bitrix CRM system', 'Automated interview and testing process'],
                 impact: 'Streamlined hiring process and improved customer service efficiency'
+            },
+            trustme: {
+                position: 'Layout Designers Coordinator & Technical Specialist',
+                description: 'Coordinating a team of layout designers and providing technical expertise in web development projects. Managing project workflows, ensuring quality standards, and supporting team members with technical challenges. Working on various client projects with focus on modern web technologies and best practices.',
+                category: 'Web Development & Team Management',
+                achievements: ['Team coordination and management', 'Technical support and guidance', 'Quality assurance', 'Project workflow optimization'],
+                impact: 'Ensuring efficient project delivery and maintaining high quality standards'
             }
+        },
+        tabs: {
+            officialEmployment: 'Official Employment',
+            projects: 'Projects'
         },
         skills: {
             title: 'Technical Skills',
@@ -196,7 +208,7 @@ const translations = {
             education: 'Education',
             thisWebsite: 'This Website',
             name: 'Rakhat Rakhimbekov',
-            age: '19 years old',
+            age: '20 years old',
             location: 'Pavlodar → Astana',
             nationality: 'Kazakhstan',
             languages: ['Russian (Native)', 'English (B2)', 'Kazakh (Learning)'],
@@ -204,7 +216,7 @@ const translations = {
             motto: 'Continuous learning and adaptability in everything I do',
             university: 'Astana IT University',
             degree: 'Bachelor\'s in Software Engineering',
-            year: '2nd Year Student',
+            year: '3rd Year Student',
             gpa: '3.18/4.0',
             focusAreas: 'Focus Areas',
             achievements: 'Achievements'
@@ -223,7 +235,7 @@ const translations = {
             questions: {
                 personal1: {
                     question: 'Tell me about yourself. Who are you and what do you do?',
-                    answer: 'Hello! My name is Rakhat, I\'m 19 years old. I\'m a second-year student at Astana IT University majoring in "Software Engineering". I\'ve been passionate about web development for over 2 years.'
+                    answer: 'Hello! My name is Rakhat, I\'m 20 years old. I\'m a second-year student at Astana IT University majoring in "Software Engineering". I\'ve been passionate about web development for over 2 years.'
                 },
                 education1: {
                     question: 'Where do you study and what is your major?',
@@ -287,7 +299,7 @@ const translations = {
             title2: ' React Разработчик',
             title3: ' Frontend Разработчик',
             title4: ' Веб Разработчик',
-            description: '19-летний студент программной инженерии из Astana IT University, увлеченный созданием современных веб-приложений с помощью React и JavaScript.',
+            description: '20-летний студент программной инженерии из Astana IT University, увлеченный созданием современных веб-приложений с помощью React и JavaScript.',
             viewWork: 'Посмотреть мои работы',
             scrollToExplore: 'Прокрутите для изучения'
         },
@@ -318,6 +330,7 @@ const translations = {
             completed: 'Завершено',
             inDevelopment: 'В разработке',
             nearCompletion: 'Почти завершено',
+            current: 'Текущее место работы',
             viewImage: 'Посмотреть изображение',
             projectDetailsAvailable: 'Детали проекта доступны',
             projectScreenshot: 'Скриншот проекта',
@@ -369,7 +382,18 @@ const translations = {
                 category: 'Автоматизация и CRM',
                 achievements: ['Построил HR бота для автоматизации найма', 'Разработал ассистента клиентского сервиса', 'Интегрировал с системой Битрикс CRM', 'Автоматизировал процесс собеседований и тестирования'],
                 impact: 'Оптимизировал процесс найма и улучшил эффективность обслуживания клиентов'
+            },
+            trustme: {
+                position: 'Координатор верстальщиков и технический специалист',
+                description: 'Координирую команду верстальщиков и предоставляю техническую экспертизу в проектах веб-разработки. Управляю рабочими процессами проектов, обеспечиваю стандарты качества и поддерживаю членов команды в решении технических задач. Работаю над различными клиентскими проектами с фокусом на современных веб-технологиях и лучших практиках.',
+                category: 'Веб-разработка и управление командой',
+                achievements: ['Координация и управление командой', 'Техническая поддержка и консультирование', 'Обеспечение качества', 'Оптимизация рабочих процессов проектов'],
+                impact: 'Обеспечение эффективной реализации проектов и поддержание высоких стандартов качества'
             }
+        },
+        tabs: {
+            officialEmployment: 'Официальное трудоустройство',
+            projects: 'Проекты'
         },
         skills: {
             title: 'Технические навыки',
@@ -459,7 +483,7 @@ const translations = {
             education: 'Образование',
             thisWebsite: 'Этот сайт',
             name: 'Рахат Рахимбеков',
-            age: '19 лет',
+            age: '20 лет',
             location: 'Павлодар → Астана',
             nationality: 'Казахстан',
             languages: ['Русский (родной)', 'Английский (B2)', 'Казахский (изучаю)'],
@@ -467,7 +491,7 @@ const translations = {
             motto: 'Непрерывное обучение и адаптивность во всем, что я делаю',
             university: 'Astana IT University',
             degree: 'Бакалавр программной инженерии',
-            year: '2-й курс студент',
+            year: '3-й курс студент',
             gpa: '3.18/4.0',
             focusAreas: 'Области фокуса',
             achievements: 'Достижения'
@@ -486,7 +510,7 @@ const translations = {
             questions: {
                 personal1: {
                     question: 'Расскажите о себе. Кто вы и чем занимаетесь?',
-                    answer: 'Привет! Меня зовут Рахат, мне 19 лет. Я студент второго курса Astana IT University по специальности "Программная инженерия". Веб-разработкой увлечен уже более 2 лет.'
+                    answer: 'Привет! Меня зовут Рахат, мне 20 лет. Я студент второго курса Astana IT University по специальности "Программная инженерия". Веб-разработкой увлечен уже более 2 лет.'
                 },
                 education1: {
                     question: 'Где вы учитесь и какая у вас специальность?',

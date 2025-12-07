@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Col, Row, Tag, Button, Modal } from 'antd';
+import { Col, Row, Tag, Button, Modal, Tabs } from 'antd';
 import { 
     CalendarOutlined, 
     TeamOutlined, 
@@ -23,6 +23,17 @@ import Seed from '../../assets/images/seed.jpg';
 import Alladin from '../../assets/images/alladin-hotel.png';
 import DiplomAI from '../../assets/images/diplomai.png';
 import GoodFood from '../../assets/images/goodfood.png';
+import ArtTech from '../../assets/images/ArtTech.png';
+import SneakerShop from '../../assets/images/sneakerShop.png';
+import Crypto from '../../assets/images/crypto.jpg';
+import Animation from '../../assets/images/animation.png';
+
+let TrustMe;
+try {
+    TrustMe = require('../../assets/images/trustMe.jpeg');
+} catch (e) {
+    TrustMe = null;
+}
 
 function Information() {
     const [visibleCards, setVisibleCards] = useState([]);
@@ -31,10 +42,11 @@ function Information() {
     const [selectedImage, setSelectedImage] = useState(null);
     const [imageScale, setImageScale] = useState(1);
     const [imageRotation, setImageRotation] = useState(0);
+    const [activeTab, setActiveTab] = useState('official');
     const sectionRef = useRef(null);
     const { t } = useLanguage();
 
-    const getWorkExperience = () => [
+    const getOfficialEmployment = () => [
         {
             id: '1',
             company: 'KazMunayGaz',
@@ -61,7 +73,7 @@ function Information() {
             image: Seed,
             description: t('experience.seed.description'),
             technologies: ['React', 'JavaScript', 'CSS3', 'Educational UX', 'Mobile-First'],
-            type: 'Contract',
+            type: 'Full-time',
             category: t('experience.seed.category'),
             achievements: Array.isArray(t('experience.seed.achievements')) ? t('experience.seed.achievements') : [],
             impact: t('experience.seed.impact'),
@@ -71,41 +83,62 @@ function Information() {
         },
         {
             id: '3',
-            company: 'MDEA.KZ',
-            position: t('experience.mdea.position'),
+            company: 'ArtTech',
+            position: t('experience.arttech.position'),
             period: '2025',
-            location: 'Astana, Kazakhstan',
-            image: null,
-            description: t('experience.mdea.description'),
-            technologies: ['React', 'JavaScript', 'CSS3', 'E-commerce', 'Admin Panel'],
-            type: 'Contract',
-            category: t('experience.mdea.category'),
-            achievements: Array.isArray(t('experience.mdea.achievements')) ? t('experience.mdea.achievements') : [],
-            impact: t('experience.mdea.impact'),
+            location: 'Kostanay, Kazakhstan',
+            image: ArtTech,
+            description: t('experience.arttech.description'),
+            technologies: ['Python', 'Telegram Bot API', 'Bitrix CRM', 'Database', 'Automation'],
+            type: 'Full-time',
+            category: t('experience.arttech.category'),
+            achievements: Array.isArray(t('experience.arttech.achievements')) ? t('experience.arttech.achievements') : [],
+            impact: t('experience.arttech.impact'),
             status: 'Completed',
-            featured: false,
+            featured: true,
             hasLiveDemo: false
         },
         {
             id: '4',
-            company: 'Alladin Hotel',
-            position: t('experience.alladin.position'),
+            company: 'TrustMe',
+            position: t('experience.trustme.position'),
+            period: 'November 2024 - Present',
+            location: 'Kazakhstan',
+            image: TrustMe,
+            description: t('experience.trustme.description'),
+            technologies: ['Team Management', 'Web Development', 'Quality Assurance', 'Project Coordination', 'Technical Support'],
+            type: 'Full-time',
+            category: t('experience.trustme.category'),
+            achievements: Array.isArray(t('experience.trustme.achievements')) ? t('experience.trustme.achievements') : [],
+            impact: t('experience.trustme.impact'),
+            status: 'Current',
+            featured: true,
+            hasLiveDemo: false
+        }
+    ];
+
+    const getProjects = () => [
+        {
+            id: 'p1',
+            company: 'GoodFood',
+            position: t('experience.goodfood.position'),
             period: '2025',
             location: 'Almaty, Kazakhstan',
-            image: Alladin,
-            description: t('experience.alladin.description'),
-            technologies: ['React', 'JavaScript', 'CSS3', 'Payment Integration', 'Booking System'],
+            image: GoodFood,
+            description: t('experience.goodfood.description'),
+            technologies: ['React', 'JavaScript', 'CSS3', 'Restaurant Platform', 'Responsive Design'],
             type: 'Contract',
-            category: t('experience.alladin.category'),
-            achievements: Array.isArray(t('experience.alladin.achievements')) ? t('experience.alladin.achievements') : [],
-            impact: t('experience.alladin.impact'),
-            status: 'Near Completion',
+            category: t('experience.goodfood.category'),
+            achievements: Array.isArray(t('experience.goodfood.achievements')) ? t('experience.goodfood.achievements') : [],
+            impact: t('experience.goodfood.impact'),
+            status: 'In Development',
             featured: true,
             hasLiveDemo: true,
-            liveUrl: 'https://alladinhotel.kz/'
+            liveUrl: 'https://goodfood.kz/menu/db49ab2f-2b71-4a8d-a996-d585fb1f27c3',
+            priority: 1
         },
         {
-            id: '5',
+            id: 'p2',
             company: 'DiplomAI',
             position: t('experience.diplomai.position'),
             period: '2025',
@@ -120,44 +153,107 @@ function Information() {
             status: 'In Development',
             featured: true,
             hasLiveDemo: true,
-            liveUrl: 'https://diplomai.kz'
+            liveUrl: 'https://diplomai.kz',
+            priority: 2
         },
         {
-            id: '6',
-            company: 'GoodFood',
-            position: t('experience.goodfood.position'),
+            id: 'p3',
+            company: 'Alladin Hotel',
+            position: t('experience.alladin.position'),
             period: '2025',
             location: 'Almaty, Kazakhstan',
-            image: GoodFood,
-            description: t('experience.goodfood.description'),
-            technologies: ['React', 'JavaScript', 'CSS3', 'Restaurant Platform', 'Responsive Design'],
+            image: Alladin,
+            description: t('experience.alladin.description'),
+            technologies: ['React', 'JavaScript', 'CSS3', 'Payment Integration', 'Booking System'],
             type: 'Contract',
-            category: t('experience.goodfood.category'),
-            achievements: Array.isArray(t('experience.goodfood.achievements')) ? t('experience.goodfood.achievements') : [],
-            impact: t('experience.goodfood.impact'),
-            status: 'In Development',
-            featured: false,
+            category: t('experience.alladin.category'),
+            achievements: Array.isArray(t('experience.alladin.achievements')) ? t('experience.alladin.achievements') : [],
+            impact: t('experience.alladin.impact'),
+            status: 'Near Completion',
+            featured: true,
             hasLiveDemo: true,
-            liveUrl: 'hhttps://goodfood.kz/menu/6dbdefef-00d7-4adc-8575-a329a32b3cea'
+            liveUrl: 'https://alladinhotel.kz/',
+            priority: 3
         },
         {
-            id: '7',
-            company: 'ArtTech',
-            position: t('experience.arttech.position'),
+            id: 'p4',
+            company: 'MDEA.KZ',
+            position: t('experience.mdea.position'),
             period: '2025',
-            location: 'Kostanay, Kazakhstan',
+            location: 'Astana, Kazakhstan',
             image: null,
-            description: t('experience.arttech.description'),
-            technologies: ['Python', 'Telegram Bot API', 'Bitrix CRM', 'Database', 'Automation'],
+            description: t('experience.mdea.description'),
+            technologies: ['React', 'JavaScript', 'CSS3', 'E-commerce', 'Admin Panel'],
             type: 'Contract',
-            category: t('experience.arttech.category'),
-            achievements: Array.isArray(t('experience.arttech.achievements')) ? t('experience.arttech.achievements') : [],
-            impact: t('experience.arttech.impact'),
+            category: t('experience.mdea.category'),
+            achievements: Array.isArray(t('experience.mdea.achievements')) ? t('experience.mdea.achievements') : [],
+            impact: t('experience.mdea.impact'),
+            status: 'Completed',
+            featured: false,
+            hasLiveDemo: false,
+            priority: 4
+        },
+        {
+            id: 'p5',
+            company: 'Sneaker Shop',
+            position: t('projects.sneakerTitle'),
+            period: '2024, 2025',
+            location: 'Personal Project',
+            image: SneakerShop,
+            description: t('projects.sneakerDesc'),
+            technologies: ['React', 'CSS3', 'JavaScript', 'Responsive Design'],
+            type: 'Personal Project',
+            category: 'E-commerce',
+            achievements: ['E-commerce platform', 'Shopping cart functionality', 'Product filtering', 'Responsive design'],
+            impact: 'Modern React e-commerce application showcasing component architecture',
             status: 'Completed',
             featured: true,
-            hasLiveDemo: false
+            hasLiveDemo: true,
+            liveUrl: 'https://rakhatprostakk228.github.io/sneakers_shop/',
+            githubUrl: 'https://github.com/rakhatprostakk228/sneakers_shop',
+            priority: 5
+        },
+        {
+            id: 'p6',
+            company: 'Crypto Landing Page',
+            position: t('projects.cryptoTitle'),
+            period: '2024',
+            location: 'Personal Project',
+            image: Crypto,
+            description: t('projects.cryptoDesc'),
+            technologies: ['HTML5', 'CSS3', 'JavaScript', 'GSAP Animations'],
+            type: 'Personal Project',
+            category: 'Landing Page',
+            achievements: ['High-converting landing page', 'Smooth animations', 'Modern UI/UX design', 'Sales optimization'],
+            impact: 'High-converting landing page for cryptocurrency company',
+            status: 'Completed',
+            featured: false,
+            hasLiveDemo: true,
+            liveUrl: 'https://rakhatprostakk228.github.io/crypto_animation/',
+            githubUrl: 'https://github.com/rakhatprostakk228/crypto_animation',
+            priority: 6
+        },
+        {
+            id: 'p7',
+            company: 'CSS Animation Showcase',
+            position: t('projects.animationTitle'),
+            period: '2023',
+            location: 'Personal Project',
+            image: Animation,
+            description: t('projects.animationDesc'),
+            technologies: ['CSS3', 'HTML5', 'Animation', 'Keyframes'],
+            type: 'Personal Project',
+            category: 'Experimental',
+            achievements: ['Creative CSS animations', 'Advanced CSS techniques', 'Interactive animations', 'Keyframes mastery'],
+            impact: 'Creative showcase of CSS animations and transitions',
+            status: 'Completed',
+            featured: false,
+            hasLiveDemo: true,
+            liveUrl: 'https://rakhatprostakk228.github.io/animation/',
+            githubUrl: 'https://github.com/rakhatprostakk228/animation',
+            priority: 7
         }
-    ];
+    ].sort((a, b) => a.priority - b.priority);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -267,19 +363,21 @@ function Information() {
     };
 
     const renderProjectLinks = (experience) => {
-        if (experience.hasLiveDemo) {
+        if (experience.hasLiveDemo || experience.githubUrl) {
             return (
                 <div className="project-links-section">
                     <div className="project-links">
-                        <a 
-                            href={experience.liveUrl} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="project-link-btn live"
-                        >
-                            <GlobalOutlined />
-                            <span>{t('projects.liveDemo')}</span>
-                        </a>
+                        {experience.hasLiveDemo && (
+                            <a 
+                                href={experience.liveUrl} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="project-link-btn live"
+                            >
+                                <GlobalOutlined />
+                                <span>{t('projects.liveDemo')}</span>
+                            </a>
+                        )}
                         {experience.githubUrl && (
                             <a 
                                 href={experience.githubUrl} 
@@ -298,42 +396,18 @@ function Information() {
         return null;
     };
 
-    const workExperience = getWorkExperience();
+    const officialEmployment = getOfficialEmployment();
+    const projects = getProjects();
 
-    return (
-        <div className="modern-experience-section" ref={sectionRef}>
-            <div className="experience-header">
-                <h2>{t('experience.title')}</h2>
-                <p>{t('experience.description')}</p>
-                
-                <div className="experience-summary">
-                    <div className="summary-item">
-                        <TeamOutlined />
-                        <div className="summary-content">
-                            <span className="summary-number">7</span>
-                            <span className="summary-label">{t('experience.companies')}</span>
-                        </div>
-                    </div>
-                    <div className="summary-item">
-                        <RocketOutlined />
-                        <div className="summary-content">
-                            <span className="summary-number">12+</span>
-                            <span className="summary-label">{t('experience.projects')}</span>
-                        </div>
-                    </div>
-                    <div className="summary-item">
-                        <TrophyOutlined />
-                        <div className="summary-content">
-                            <span className="summary-number">100%</span>
-                            <span className="summary-label">{t('experience.successRate')}</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <Row gutter={[40, 40]}>
-                {workExperience.map((experience, index) => (
-                    <Col xs={24} xl={12} key={experience.id}>
+    const renderExperienceCards = (experiences) => {
+        if (!experiences || experiences.length === 0) {
+            return <div style={{ padding: '40px', textAlign: 'center', color: '#718096' }}>No items to display</div>;
+        }
+        return (
+            <div className="tabs-content-wrapper">
+                <Row gutter={[40, 40]}>
+                    {experiences.map((experience, index) => (
+                        <Col xs={24} xl={12} key={experience.id}>
                         <div 
                             className={`experience-card ${visibleCards.includes(experience.id) ? 'visible' : ''} ${experience.featured ? 'featured' : ''}`}
                             data-experience-id={experience.id}
@@ -421,15 +495,75 @@ function Information() {
                                                 ? t('experience.inDevelopment')
                                                 : experience.status === 'Near Completion'
                                                 ? t('experience.nearCompletion')
+                                                : experience.status === 'Current'
+                                                ? t('experience.current')
                                                 : experience.status}
                                         </span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </Col>
-                ))}
-            </Row>
+                        </Col>
+                    ))}
+                </Row>
+            </div>
+        );
+    };
+
+    const tabItems = [
+        {
+            key: 'official',
+            label: t('tabs.officialEmployment'),
+            children: renderExperienceCards(officialEmployment)
+        },
+        {
+            key: 'projects',
+            label: t('tabs.projects'),
+            children: renderExperienceCards(projects)
+        }
+    ];
+
+    return (
+        <div className="modern-experience-section" ref={sectionRef}>
+            <div className="experience-header">
+                <h2>{t('experience.title')}</h2>
+                <p>{t('experience.description')}</p>
+                
+                <div className="experience-summary">
+                    <div className="summary-item">
+                        <TeamOutlined />
+                        <div className="summary-content">
+                            <span className="summary-number">{officialEmployment.length}</span>
+                            <span className="summary-label">{t('experience.companies')}</span>
+                        </div>
+                    </div>
+                    <div className="summary-item">
+                        <RocketOutlined />
+                        <div className="summary-content">
+                            <span className="summary-number">{projects.length}</span>
+                            <span className="summary-label">{t('experience.projects')}</span>
+                        </div>
+                    </div>
+                    <div className="summary-item">
+                        <TrophyOutlined />
+                        <div className="summary-content">
+                            <span className="summary-number">100%</span>
+                            <span className="summary-label">{t('experience.successRate')}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="experience-tabs-container">
+                <div className="container">
+                    <Tabs
+                        activeKey={activeTab}
+                        onChange={setActiveTab}
+                        items={tabItems}
+                        size="large"
+                    />
+                </div>
+            </div>
 
             <Modal
                 open={modalVisible}

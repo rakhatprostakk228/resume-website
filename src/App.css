@@ -631,6 +631,43 @@ img {
   margin-bottom: 40px;
 }
 
+.experience-tabs-container {
+  margin-top: 40px;
+}
+
+.experience-tabs-container .ant-tabs {
+  margin-bottom: 40px;
+}
+
+.experience-tabs-container .ant-tabs-tab {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 24px;
+}
+
+.experience-tabs-container .ant-tabs-tab-active {
+  color: #27c4ff;
+}
+
+.experience-tabs-container .ant-tabs-ink-bar {
+  background: #27c4ff;
+  height: 3px;
+}
+
+.experience-tabs-container .ant-tabs-content-holder {
+  padding: 20px 0;
+  min-height: 400px;
+}
+
+.experience-tabs-container .ant-tabs-content {
+  padding-top: 20px;
+}
+
+.tabs-content-wrapper {
+  padding: 20px 0;
+  min-height: 400px;
+}
+
 .experience-summary {
   display: flex;
   justify-content: center;
@@ -942,6 +979,12 @@ img {
   background: #f0fdf4;
   color: #166534;
   border: 1px solid #bbf7d0;
+}
+
+.status-badge.current {
+  background: #eff6ff;
+  color: #1e40af;
+  border: 1px solid #93c5fd;
 }
 
 /* Skills Section */
