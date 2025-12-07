@@ -1,5 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+
 #root {
   overflow: hidden;
+  width: 100%;
 }
 
 .container {
@@ -354,9 +359,10 @@ img {
 /* Projects Section */
 .modern-projects-section {
   padding: 80px 0;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  background: #f8fafc;
   position: relative;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .modern-projects-section::before {
@@ -600,6 +606,8 @@ img {
   padding: 80px 0;
   background: white;
   position: relative;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .modern-experience-section::before {

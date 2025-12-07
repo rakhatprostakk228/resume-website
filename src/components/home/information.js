@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Col, Row, Tag, Button, Modal, Tabs } from 'antd';
+import { Col, Row, Tag, Button, Modal } from 'antd';
 import { 
     CalendarOutlined, 
     TeamOutlined, 
@@ -42,8 +42,8 @@ function Information() {
     const [selectedImage, setSelectedImage] = useState(null);
     const [imageScale, setImageScale] = useState(1);
     const [imageRotation, setImageRotation] = useState(0);
-    const [activeTab, setActiveTab] = useState('official');
     const sectionRef = useRef(null);
+    const projectsSectionRef = useRef(null);
     const { t } = useLanguage();
 
     const getOfficialEmployment = () => [
@@ -275,6 +275,9 @@ function Information() {
         const cards = sectionRef.current?.querySelectorAll('.experience-card');
         cards?.forEach(card => observer.observe(card));
 
+        const projectCards = projectsSectionRef.current?.querySelectorAll('.experience-card');
+        projectCards?.forEach(card => observer.observe(card));
+
         return () => observer.disconnect();
     }, [visibleCards]);
 
@@ -401,14 +404,18 @@ function Information() {
 
     const renderExperienceCards = (experiences) => {
         if (!experiences || experiences.length === 0) {
-            return <div style={{ padding: '40px', textAlign: 'center', color: '#718096' }}>No items to display</div>;
+            return (
+                <div className="tabs-content-wrapper">
+                    <div style={{ padding: '40px', textAlign: 'center', color: '#718096' }}>No items to display</div>
+                </div>
+            );
         }
         return (
             <div className="tabs-content-wrapper">
                 <Row gutter={[40, 40]}>
                     {experiences.map((experience, index) => (
                         <Col xs={24} xl={12} key={experience.id}>
-                        <div 
+                            <div 
                             className={`experience-card ${visibleCards.includes(experience.id) ? 'visible' : ''} ${experience.featured ? 'featured' : ''}`}
                             data-experience-id={experience.id}
                             onMouseEnter={() => setActiveCard(experience.id)}
@@ -503,65 +510,65 @@ function Information() {
                                 </div>
                             </div>
                         </div>
-                        </Col>
+                    </Col>
                     ))}
                 </Row>
             </div>
         );
     };
 
-    const tabItems = [
-        {
-            key: 'official',
-            label: t('tabs.officialEmployment'),
-            children: renderExperienceCards(officialEmployment)
-        },
-        {
-            key: 'projects',
-            label: t('tabs.projects'),
-            children: renderExperienceCards(projects)
-        }
-    ];
-
     return (
-        <div className="modern-experience-section" ref={sectionRef}>
-            <div className="experience-header">
-                <h2>{t('experience.title')}</h2>
-                <p>{t('experience.description')}</p>
-                
-                <div className="experience-summary">
-                    <div className="summary-item">
-                        <TeamOutlined />
-                        <div className="summary-content">
-                            <span className="summary-number">{officialEmployment.length}</span>
-                            <span className="summary-label">{t('experience.companies')}</span>
+        <>
+            {/* Секция официального трудоустройства */}
+            <div className="modern-experience-section" ref={sectionRef}>
+                <div className="container">
+                    <div className="experience-header">
+                        <h2>{t('tabs.officialEmployment')}</h2>
+                        <p>{t('experience.description')}</p>
+                        
+                        <div className="experience-summary">
+                            <div className="summary-item">
+                                <TeamOutlined />
+                                <div className="summary-content">
+                                    <span className="summary-number">{officialEmployment.length}</span>
+                                    <span className="summary-label">{t('experience.companies')}</span>
+                                </div>
+                            </div>
+                            <div className="summary-item">
+                                <TrophyOutlined />
+                                <div className="summary-content">
+                                    <span className="summary-number">100%</span>
+                                    <span className="summary-label">{t('experience.successRate')}</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div className="summary-item">
-                        <RocketOutlined />
-                        <div className="summary-content">
-                            <span className="summary-number">{projects.length}</span>
-                            <span className="summary-label">{t('experience.projects')}</span>
-                        </div>
-                    </div>
-                    <div className="summary-item">
-                        <TrophyOutlined />
-                        <div className="summary-content">
-                            <span className="summary-number">100%</span>
-                            <span className="summary-label">{t('experience.successRate')}</span>
-                        </div>
-                    </div>
+
+                    {renderExperienceCards(officialEmployment)}
                 </div>
             </div>
 
-            <div className="experience-tabs-container">
+            {/* Секция проектов */}
+            <div className="modern-projects-section" ref={projectsSectionRef}>
                 <div className="container">
-                    <Tabs
-                        activeKey={activeTab}
-                        onChange={setActiveTab}
-                        items={tabItems}
-                        size="large"
-                    />
+                    <div className="projects-header">
+                        <div className="header-content">
+                            <h2>{t('tabs.projects')}</h2>
+                            <p>{t('experience.description')}</p>
+                        </div>
+                    </div>
+                    
+                    <div className="experience-summary" style={{ marginBottom: '40px' }}>
+                        <div className="summary-item">
+                            <RocketOutlined />
+                            <div className="summary-content">
+                                <span className="summary-number">{projects.length}</span>
+                                <span className="summary-label">{t('experience.projects')}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {renderExperienceCards(projects)}
                 </div>
             </div>
 
@@ -650,7 +657,7 @@ function Information() {
                     </>
                 )}
             </Modal>
-        </div>
+        </>
     );
 }
 
