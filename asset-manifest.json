@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/resume-website/static/css/main.ef9df57f.css",
-    "main.js": "/resume-website/static/js/main.42f1d658.js",
+    "main.css": "/resume-website/static/css/main.21edc9aa.css",
+    "main.js": "/resume-website/static/js/main.b7bb3363.js",
     "static/js/453.5e560239.chunk.js": "/resume-website/static/js/453.5e560239.chunk.js",
     "static/media/alladin-hotel.png": "/resume-website/static/media/alladin-hotel.438da0045d7d12324f34.png",
     "static/media/sneakerShop.png": "/resume-website/static/media/sneakerShop.3155b1034573daeefd86.png",
@@ -13,12 +13,12 @@
     "static/media/seed.jpg": "/resume-website/static/media/seed.1f897592fcbafce182fc.jpg",
     "static/media/me.jpg": "/resume-website/static/media/me.26f79946a846163a0cc5.jpg",
     "index.html": "/resume-website/index.html",
-    "main.ef9df57f.css.map": "/resume-website/static/css/main.ef9df57f.css.map",
-    "main.42f1d658.js.map": "/resume-website/static/js/main.42f1d658.js.map",
+    "main.21edc9aa.css.map": "/resume-website/static/css/main.21edc9aa.css.map",
+    "main.b7bb3363.js.map": "/resume-website/static/js/main.b7bb3363.js.map",
     "453.5e560239.chunk.js.map": "/resume-website/static/js/453.5e560239.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ef9df57f.css",
-    "static/js/main.42f1d658.js"
+    "static/css/main.21edc9aa.css",
+    "static/js/main.b7bb3363.js"
   ]
 }
