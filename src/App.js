@@ -8,6 +8,7 @@ import { LanguageProvider } from './components/context/languageContext';
 import { useEffect } from 'react';
 
 import AppHeader from './components/common/header';
+
 import AppHome from './pages/home';
 import AppAbout from './pages/about';
 import AppFaq from './pages/faq';
