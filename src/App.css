@@ -604,7 +604,7 @@ img {
 /* Experience Section */
 .modern-experience-section {
   padding: 80px 0;
-  background: white;
+  background: #f8fafc;
   position: relative;
   width: 100%;
   box-sizing: border-box;
@@ -3069,7 +3069,7 @@ body {
 }
 
 .dark-theme .modern-experience-section {
-  background: #2d3748;
+  background: #1a202c;
 }
 
 .dark-theme .experience-header h2 {
@@ -3318,6 +3318,26 @@ body {
 
 .dark-theme .status-badge .ant-badge-status-text {
   color: #a7f3d0;
+}
+
+.dark-theme .status-badge.completed {
+  background: #065f46;
+  color: #4ade80 !important;
+  border: 1px solid #10b981;
+}
+
+.dark-theme .status-badge.completed span {
+  color: #4ade80 !important;
+}
+
+.dark-theme .status-badge.current {
+  background: #1e3a8a;
+  color: #60a5fa !important;
+  border: 1px solid #3b82f6;
+}
+
+.dark-theme .status-badge.current span {
+  color: #60a5fa !important;
 }
 
 .dark-theme .nav-link {
@@ -3597,6 +3617,10 @@ body {
 
 .dark-theme .stat-row span:first-child {
   color: #f7fafc;
+}
+
+.dark-theme .stat-row .ant-progress-text {
+  color: #52c41a !important;
 }
 
 .dark-theme .focus-item {
