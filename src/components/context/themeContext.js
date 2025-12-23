@@ -12,12 +12,25 @@ export const useTheme = () => {
 
 export const ThemeProvider = ({ children }) => {
     const [isDark, setIsDark] = useState(() => {
-        const saved = localStorage.getItem('theme');
-        return saved ? JSON.parse(saved) : false;
+        try {
+            if (typeof window !== 'undefined' && window.localStorage) {
+                const saved = localStorage.getItem('theme');
+                return saved ? JSON.parse(saved) : false;
+            }
+        } catch (e) {
+            // localStorage недоступен (приватный режим Safari)
+        }
+        return false;
     });
 
     useEffect(() => {
-        localStorage.setItem('theme', JSON.stringify(isDark));
+        try {
+            if (typeof window !== 'undefined' && window.localStorage) {
+                localStorage.setItem('theme', JSON.stringify(isDark));
+            }
+        } catch (e) {
+            // Игнорируем ошибки localStorage
+        }
         
         if (isDark) {
             document.documentElement.classList.add('dark-theme');

@@ -565,12 +565,25 @@ const translations = {
 
 export const LanguageProvider = ({ children }) => {
     const [currentLanguage, setCurrentLanguage] = useState(() => {
-        const saved = localStorage.getItem('language');
-        return saved || 'en';
+        try {
+            if (typeof window !== 'undefined' && window.localStorage) {
+                const saved = localStorage.getItem('language');
+                return saved || 'en';
+            }
+        } catch (e) {
+            // localStorage недоступен (приватный режим Safari)
+        }
+        return 'en';
     });
 
     useEffect(() => {
-        localStorage.setItem('language', currentLanguage);
+        try {
+            if (typeof window !== 'undefined' && window.localStorage) {
+                localStorage.setItem('language', currentLanguage);
+            }
+        } catch (e) {
+            // Игнорируем ошибки localStorage
+        }
         document.documentElement.setAttribute('lang', currentLanguage);
     }, [currentLanguage]);
 
