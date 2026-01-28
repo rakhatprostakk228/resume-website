@@ -114,6 +114,13 @@ const translations = {
                 category: 'Web Development & Team Management',
                 achievements: ['Team coordination and management', 'Technical support and guidance', 'Quality assurance', 'Project workflow optimization'],
                 impact: 'Ensuring efficient project delivery and maintaining high quality standards'
+            },
+            sewingfactory: {
+                position: 'Co-Founder & Frontend Developer',
+                description: 'Co-founded an NFT marketplace startup currently preparing for investment. Fully developed the frontend architecture and UI of the platform from scratch. Integrated the initial backend database and core logic required for early MVP functionality.',
+                category: 'NFT Marketplace & Startup',
+                achievements: ['Co-founded NFT marketplace startup', 'Developed frontend architecture from scratch', 'Built complete UI/UX platform', 'Integrated backend database and core logic', 'Prepared platform for investment'],
+                impact: 'Created innovative NFT marketplace platform ready for investment and scaling'
             }
         },
         tabs: {
@@ -389,6 +396,13 @@ const translations = {
                 category: 'Веб-разработка и управление командой',
                 achievements: ['Координация и управление командой', 'Техническая поддержка и консультирование', 'Обеспечение качества', 'Оптимизация рабочих процессов проектов'],
                 impact: 'Обеспечение эффективной реализации проектов и поддержание высоких стандартов качества'
+            },
+            sewingfactory: {
+                position: 'Со-основатель & Frontend Разработчик',
+                description: 'Со-основал стартап NFT маркетплейса, который готовится к инвестициям. Полностью разработал архитектуру фронтенда и UI платформы с нуля. Интегрировал начальную базу данных бэкенда и основную логику, необходимую для раннего функционала MVP.',
+                category: 'NFT Маркетплейс & Стартап',
+                achievements: ['Со-основал стартап NFT маркетплейса', 'Разработал архитектуру фронтенда с нуля', 'Построил полную UI/UX платформу', 'Интегрировал базу данных бэкенда и основную логику', 'Подготовил платформу к инвестициям'],
+                impact: 'Создал инновационную платформу NFT маркетплейса, готовую к инвестициям и масштабированию'
             }
         },
         tabs: {

@@ -114,6 +114,24 @@ function Information() {
             status: 'Current',
             featured: true,
             hasLiveDemo: false
+        },
+        {
+            id: '5',
+            company: 'Sewing Factory',
+            position: t('experience.sewingfactory.position'),
+            period: 'Sep 2025 — Nov 2025',
+            location: 'Remote / Astana',
+            image: null,
+            description: t('experience.sewingfactory.description'),
+            technologies: ['React', 'JavaScript', 'Frontend Architecture', 'UI/UX Design', 'Backend Integration', 'Database', 'NFT Marketplace'],
+            type: 'Co-Founder',
+            category: t('experience.sewingfactory.category'),
+            achievements: Array.isArray(t('experience.sewingfactory.achievements')) ? t('experience.sewingfactory.achievements') : [],
+            impact: t('experience.sewingfactory.impact'),
+            status: 'Completed',
+            featured: true,
+            hasLiveDemo: true,
+            liveUrl: 'https://sewing-factory-exiylod23-rakhats-projects-8807b277.vercel.app/'
         }
     ];
 
