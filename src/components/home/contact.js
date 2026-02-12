@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
 import { Row, Col, Form, Input, Button, Select, message, Space } from 'antd';
-import emailjs from '@emailjs/browser';
-import { 
-    MailOutlined, 
-    PhoneOutlined, 
-    EnvironmentOutlined, 
+import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
+import {
+    MailOutlined,
+    PhoneOutlined,
+    EnvironmentOutlined,
     SendOutlined,
     UserOutlined,
-    MessageOutlined,
     CheckCircleOutlined
 } from '@ant-design/icons';
 import { useLanguage } from '../context/languageContext';
 
 const { TextArea } = Input;
 const { Option } = Select;
+
+const EMAILJS_SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID || 'service_22ou9io';
+const EMAILJS_TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || 'template_a4ixvaj';
+const EMAILJS_PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || 'D4CQ9dsuZSQbFQrd4';
 
 function Contact() {
     const [form] = Form.useForm();
@@ -46,8 +49,13 @@ function Contact() {
     ];
 
     const handleSubmit = async (values) => {
+        if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+            message.error('Email service is not configured.');
+            return;
+        }
+
         setLoading(true);
-        
+
         try {
             const templateParams = {
                 from_name: values.name,
@@ -60,22 +68,27 @@ function Contact() {
             };
 
             await emailjs.send(
-                'service_22ou9io',
-                'template_a4ixvaj',
+                EMAILJS_SERVICE_ID,
+                EMAILJS_TEMPLATE_ID,
                 templateParams,
-                'D4CQ9dsuZSQbFQrd4'
+                { publicKey: EMAILJS_PUBLIC_KEY }
             );
-            
+
             message.success(t('contact.successMessage'));
             setSubmitted(true);
             form.resetFields();
-            
+
             setTimeout(() => {
                 setSubmitted(false);
             }, 5000);
         } catch (error) {
-            console.error('EmailJS Error:', error);
-            message.error('Failed to send message. Please try again.');
+            if (error instanceof EmailJSResponseStatus) {
+                console.error('EmailJS Error:', error.status, error.text);
+                message.error(`Failed to send message (${error.status}).`);
+            } else {
+                console.error('EmailJS Error:', error);
+                message.error('Failed to send message. Please try again.');
+            }
         } finally {
             setLoading(false);
         }
@@ -106,7 +119,7 @@ function Contact() {
                                 <h3>{t('contact.getInTouch')}</h3>
                                 <p>{t('contact.feelFreeToReach')}</p>
                             </div>
-                            
+
                             <div className="contact-items">
                                 {contactInfo.map((item, index) => (
                                     <div key={index} className="contact-item">
@@ -159,7 +172,7 @@ function Contact() {
                                                     { min: 2 }
                                                 ]}
                                             >
-                                                <Input 
+                                                <Input
                                                     prefix={<UserOutlined />}
                                                     placeholder={t('contact.fullNamePlaceholder')}
                                                     size="large"
@@ -175,7 +188,7 @@ function Contact() {
                                                     { type: 'email' }
                                                 ]}
                                             >
-                                                <Input 
+                                                <Input
                                                     prefix={<MailOutlined />}
                                                     placeholder={t('contact.emailPlaceholder')}
                                                     size="large"
@@ -190,7 +203,7 @@ function Contact() {
                                                 name="phone"
                                                 label={t('contact.phoneNumber')}
                                             >
-                                                <Input 
+                                                <Input
                                                     prefix={<PhoneOutlined />}
                                                     placeholder={t('contact.phonePlaceholder')}
                                                     size="large"
@@ -236,7 +249,7 @@ function Contact() {
                                             { min: 10 }
                                         ]}
                                     >
-                                        <TextArea 
+                                        <TextArea
                                             rows={6}
                                             placeholder={t('contact.messagePlaceholder')}
                                             showCount
@@ -245,9 +258,9 @@ function Contact() {
                                     </Form.Item>
 
                                     <Form.Item>
-                                        <Button 
-                                            type="primary" 
-                                            htmlType="submit" 
+                                        <Button
+                                            type="primary"
+                                            htmlType="submit"
                                             size="large"
                                             loading={loading}
                                             className="submit-button"

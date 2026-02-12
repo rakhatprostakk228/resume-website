@@ -102,7 +102,7 @@ function Information() {
             id: '4',
             company: 'TrustMe',
             position: t('experience.trustme.position'),
-            period: 'November 2024 - Present',
+            period: 'November 2025 - Present',
             location: 'Kazakhstan',
             image: TrustMe,
             description: t('experience.trustme.description'),

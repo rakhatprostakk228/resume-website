@@ -218,7 +218,7 @@ const translations = {
             age: '20 years old',
             location: 'Pavlodar → Astana',
             nationality: 'Kazakhstan',
-            languages: ['Russian (Native)', 'English (B2)', 'Kazakh (Learning)'],
+            languages: ['Russian (Native)', 'English (B2)', 'Kazakh (Native)'],
             interests: ['Swimming', 'Football', 'Technology', 'Cultural Heritage'],
             motto: 'Continuous learning and adaptability in everything I do',
             university: 'Astana IT University',
@@ -263,7 +263,7 @@ const translations = {
             },
             features: [
                 'Response within 24 hours',
-                'Communication in Russian and English',
+                'Communication in Kazakh, Russian and English',
                 'Individual approach'
             ],
             noResults: 'No questions found',
@@ -500,7 +500,7 @@ const translations = {
             age: '20 лет',
             location: 'Павлодар → Астана',
             nationality: 'Казахстан',
-            languages: ['Русский (родной)', 'Английский (B2)', 'Казахский (изучаю)'],
+            languages: ['Русский (носитель)', 'Английский (B2)', 'Казахский (родной)'],
             interests: ['Плавание', 'Футбол', 'Технологии', 'Культурное наследие'],
             motto: 'Непрерывное обучение и адаптивность во всем, что я делаю',
             university: 'Astana IT University',
@@ -545,7 +545,7 @@ const translations = {
             },
             features: [
                 'Ответ в течение 24 часов',
-                'Общение на русском и английском языках',
+                'Общение на казахском, русском и английском языках',
                 'Индивидуальный подход'
             ],
             noResults: 'Вопросы не найдены',
