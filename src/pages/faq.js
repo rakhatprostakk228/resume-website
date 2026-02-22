@@ -310,7 +310,7 @@ function AppFaq() {
                                             <Button 
                                                 size="large"
                                                 icon={<GlobalOutlined />}
-                                                href="https://t.me/rakhatprostakk"
+                                                href="https://t.me/rrkaee_04"
                                                 target="_blank"
                                                 className="cta-button-secondary"
                                                 block
