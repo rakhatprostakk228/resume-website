@@ -6,7 +6,6 @@ import {Route, Routes, HashRouter as Router, useLocation} from 'react-router-dom
 import { ThemeProvider } from './components/context/themeContext';
 import { LanguageProvider } from './components/context/languageContext';
 import { useEffect } from 'react';
-import Snowfall from 'react-snowfall';
 
 import AppHeader from './components/common/header';
 
@@ -49,19 +48,6 @@ function App() {
     <LanguageProvider>
       <ThemeProvider>
         <div className="App">
-          <Snowfall 
-            snowflakeCount={100}
-            speed={[0.5, 2]}
-            wind={[-0.5, 2]}
-            radius={[0.5, 2]}
-            style={{
-              position: 'fixed',
-              width: '100vw',
-              height: '100vh',
-              zIndex: 1000,
-              pointerEvents: 'none'
-            }}
-          />
           <Layout>
             <Router>
               <PageWrapper>

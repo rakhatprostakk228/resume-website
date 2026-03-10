@@ -100,7 +100,7 @@ function AppHeader() {
                                 <a href='https://www.linkedin.com/in/rakhatprostakk' target="_blank" rel="noopener noreferrer" className="social-link">
                                     <LinkedinFilled />
                                 </a>
-                                <a href='https://www.instagram.com/rakhatprostakk' target="_blank" rel="noopener noreferrer" className="social-link">
+                                <a href='https://www.instagram.com/rrkaee_04' target="_blank" rel="noopener noreferrer" className="social-link">
                                     <InstagramFilled />
                                 </a>
                             </div>
@@ -214,7 +214,7 @@ function AppHeader() {
                         <a href='https://www.linkedin.com/in/rakhatprostakk' target="_blank" rel="noopener noreferrer">
                             <LinkedinFilled />
                         </a>
-                        <a href='https://www.instagram.com/rakhatprostakk' target="_blank" rel="noopener noreferrer">
+                        <a href='https://www.instagram.com/rrkaee_04' target="_blank" rel="noopener noreferrer">
                             <InstagramFilled />
                         </a>
                     </div>
