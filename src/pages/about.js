@@ -64,7 +64,7 @@ function AppAbout() {
             id: 'personal',
             title: t('about.personalInfo'),
             icon: <UserOutlined />,
-            color: '#27c4ff',
+            color: '#6366f1',
             data: getPersonalInfo()
         },
         {
@@ -355,14 +355,9 @@ function AppAbout() {
                                 size="large"
                                 className={`nav-tab ${activeSection === section.id ? 'active' : ''}`}
                                 onClick={() => setActiveSection(section.id)}
-                                style={{ 
-                                    borderColor: activeSection === section.id ? section.color : '#e2e8f0',
-                                    background: activeSection === section.id ? section.color : 'white',
-                                    color: activeSection === section.id ? 'white' : '#64748b'
-                                }}
                             >
                                 {section.icon}
-                                <span style={{ color: activeSection === section.id ? 'white' : '#64748b' }}>
+                                <span>
                                     {section.title}
                                 </span>
                             </Button>

@@ -28,12 +28,12 @@ function AppFaq() {
     const sectionRef = useRef(null);
 
     const faqCategories = [
-        { id: 'all', name: t('faq.categories.all'), icon: <QuestionCircleOutlined />, color: '#27c4ff' },
-        { id: 'personal', name: t('faq.categories.personal'), icon: <UserOutlined />, color: '#52c41a' },
-        { id: 'education', name: t('faq.categories.education'), icon: <BookOutlined />, color: '#1890ff' },
-        { id: 'skills', name: t('faq.categories.skills'), icon: <CodeOutlined />, color: '#722ed1' },
-        { id: 'projects', name: t('faq.categories.projects'), icon: <RocketOutlined />, color: '#fa8c16' },
-        { id: 'collaboration', name: t('faq.categories.collaboration'), icon: <TeamOutlined />, color: '#eb2f96' }
+        { id: 'all', name: t('faq.categories.all'), icon: <QuestionCircleOutlined />, color: '#22d3ee' },
+        { id: 'personal', name: t('faq.categories.personal'), icon: <UserOutlined />, color: '#10b981' },
+        { id: 'education', name: t('faq.categories.education'), icon: <BookOutlined />, color: '#6366f1' },
+        { id: 'skills', name: t('faq.categories.skills'), icon: <CodeOutlined />, color: '#a855f7' },
+        { id: 'projects', name: t('faq.categories.projects'), icon: <RocketOutlined />, color: '#f59e0b' },
+        { id: 'collaboration', name: t('faq.categories.collaboration'), icon: <TeamOutlined />, color: '#ec4899' }
     ];
 
     const faqItems = [
@@ -111,7 +111,7 @@ function AppFaq() {
 
     const getCategoryColor = (categoryId) => {
         const category = faqCategories.find(cat => cat.id === categoryId);
-        return category ? category.color : '#27c4ff';
+        return category ? category.color : '#22d3ee';
     };
 
     // Безопасная обработка массива features
@@ -176,11 +176,6 @@ function AppFaq() {
                                         size="large"
                                         className={`category-btn ${activeCategory === category.id ? 'active' : ''}`}
                                         onClick={() => handleCategoryChange(category.id)}
-                                        style={{
-                                            borderColor: activeCategory === category.id ? category.color : '#e2e8f0',
-                                            background: activeCategory === category.id ? category.color : 'white',
-                                            color: activeCategory === category.id ? 'white' : '#64748b'
-                                        }}
                                     >
                                         {category.icon}
                                         <span>{category.name}</span>

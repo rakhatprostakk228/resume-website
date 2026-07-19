@@ -91,12 +91,12 @@ function Timeline() {
 
     const getTypeColor = (type) => {
         const colors = {
-            education: '#27c4ff',
-            project: '#52c41a',
-            work: '#fa8c16',
-            future: '#722ed1'
+            education: '#6366f1',
+            project: '#10b981',
+            work: '#f59e0b',
+            future: '#a855f7'
         };
-        return colors[type] || '#27c4ff';
+        return colors[type] || '#6366f1';
     };
 
     const timelineData = getTimelineData();

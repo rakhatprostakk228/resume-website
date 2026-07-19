@@ -102,16 +102,16 @@ function Information() {
             id: '4',
             company: 'TrustMe',
             position: t('experience.trustme.position'),
-            period: 'November 2025 - Present',
-            location: 'Kazakhstan',
+            period: 'Nov 2025 — Jul 2026',
+            location: 'Astana, Kazakhstan',
             image: TrustMe,
             description: t('experience.trustme.description'),
-            technologies: ['Team Management', 'Web Development', 'Quality Assurance', 'Project Coordination', 'Technical Support'],
+            technologies: ['Vue.js', 'Tailwind CSS', 'GitLab', 'Team Coordination', 'Code Quality'],
             type: 'Full-time',
             category: t('experience.trustme.category'),
             achievements: Array.isArray(t('experience.trustme.achievements')) ? t('experience.trustme.achievements') : [],
             impact: t('experience.trustme.impact'),
-            status: 'Current',
+            status: 'Completed',
             featured: true,
             hasLiveDemo: false
         },
@@ -132,10 +132,46 @@ function Information() {
             featured: true,
             hasLiveDemo: true,
             liveUrl: 'https://sewing-factory-exiylod23-rakhats-projects-8807b277.vercel.app/'
+        },
+        {
+            id: '6',
+            company: 'BusinessHub',
+            position: t('experience.businesshub.position'),
+            period: 'May 2026 — Present',
+            location: 'Remote / Shymkent',
+            image: null,
+            description: t('experience.businesshub.description'),
+            technologies: ['Vue.js 2', 'Vuex', 'JavaScript', 'Bootstrap', 'Laravel REST API', 'Git'],
+            type: 'Full-time',
+            category: t('experience.businesshub.category'),
+            achievements: Array.isArray(t('experience.businesshub.achievements')) ? t('experience.businesshub.achievements') : [],
+            impact: t('experience.businesshub.impact'),
+            status: 'Current',
+            featured: true,
+            hasLiveDemo: false
         }
     ];
 
     const getProjects = () => [
+        {
+            id: 'p0',
+            company: 'Scoutly',
+            position: t('experience.scoutly.position'),
+            period: '2025',
+            location: 'Astana, Kazakhstan',
+            image: null,
+            description: t('experience.scoutly.description'),
+            technologies: ['React', 'TypeScript', 'Zustand', 'Zod'],
+            type: 'Personal Project',
+            category: t('experience.scoutly.category'),
+            achievements: Array.isArray(t('experience.scoutly.achievements')) ? t('experience.scoutly.achievements') : [],
+            impact: t('experience.scoutly.impact'),
+            status: 'Completed',
+            featured: true,
+            hasLiveDemo: true,
+            liveUrl: 'https://diploma-project-nine.vercel.app/',
+            priority: 0
+        },
         {
             id: 'p1',
             company: 'GoodFood',
@@ -270,6 +306,63 @@ function Information() {
             liveUrl: 'https://rakhatprostakk228.github.io/animation/',
             githubUrl: 'https://github.com/rakhatprostakk228/animation',
             priority: 7
+        },
+        {
+            id: 'p8',
+            company: 'Sultanoff',
+            position: t('experience.sultanoff.position'),
+            period: '2025',
+            location: 'Kazakhstan',
+            image: null,
+            description: t('experience.sultanoff.description'),
+            technologies: ['Vue.js', 'CSS3', 'Responsive Design'],
+            type: 'Contract',
+            category: t('experience.sultanoff.category'),
+            achievements: Array.isArray(t('experience.sultanoff.achievements')) ? t('experience.sultanoff.achievements') : [],
+            impact: t('experience.sultanoff.impact'),
+            status: 'Completed',
+            featured: false,
+            hasLiveDemo: true,
+            liveUrl: 'https://sultanoff.vercel.app/',
+            priority: 8
+        },
+        {
+            id: 'p9',
+            company: 'Barakat',
+            position: t('experience.barakat.position'),
+            period: 'Nov 2025',
+            location: 'Kazakhstan',
+            image: null,
+            description: t('experience.barakat.description'),
+            technologies: ['React'],
+            type: 'Contract',
+            category: t('experience.barakat.category'),
+            achievements: Array.isArray(t('experience.barakat.achievements')) ? t('experience.barakat.achievements') : [],
+            impact: t('experience.barakat.impact'),
+            status: 'Completed',
+            featured: false,
+            hasLiveDemo: true,
+            liveUrl: 'https://barakat-sigma.vercel.app/',
+            priority: 9
+        },
+        {
+            id: 'p10',
+            company: 'A2 Avtopark',
+            position: t('experience.a2.position'),
+            period: 'Oct 2025',
+            location: 'Kazakhstan',
+            image: null,
+            description: t('experience.a2.description'),
+            technologies: ['Vue.js'],
+            type: 'Contract',
+            category: t('experience.a2.category'),
+            achievements: Array.isArray(t('experience.a2.achievements')) ? t('experience.a2.achievements') : [],
+            impact: t('experience.a2.impact'),
+            status: 'Completed',
+            featured: false,
+            hasLiveDemo: true,
+            liveUrl: 'https://www.a2-avtopark.kz/',
+            priority: 10
         }
     ].sort((a, b) => a.priority - b.priority);
 
@@ -301,12 +394,12 @@ function Information() {
 
     const getTypeColor = (type) => {
         const colors = {
-            'Internship': '#1890ff',
-            'Contract': '#52c41a',
-            'Full-time': '#722ed1',
-            'Personal Project': '#fa8c16'
+            'Internship': '#6366f1',
+            'Contract': '#10b981',
+            'Full-time': '#a855f7',
+            'Personal Project': '#f59e0b'
         };
-        return colors[type] || '#27c4ff';
+        return colors[type] || '#22d3ee';
     };
 
     const openImageModal = (image, company) => {

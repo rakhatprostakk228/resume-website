@@ -37,7 +37,7 @@ function ScrollToTop() {
                 <svg className="progress-ring" width="60" height="60">
                     <circle
                         className="progress-ring-circle-bg"
-                        stroke="rgba(255, 255, 255, 0.1)"
+                        stroke="rgba(127, 140, 170, 0.25)"
                         strokeWidth="3"
                         fill="transparent"
                         r="26"
@@ -46,7 +46,7 @@ function ScrollToTop() {
                     />
                     <circle
                         className="progress-ring-circle"
-                        stroke="#27c4ff"
+                        stroke="#6366f1"
                         strokeWidth="3"
                         fill="transparent"
                         r="26"

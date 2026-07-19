@@ -61,6 +61,7 @@ function App() {
                     <Route path='/faq' element={<AppFaq />} />
                   </Routes>
                 </Content>
+                <SectionNavigation />
               </PageWrapper>
             </Router>
             <Footer>
@@ -69,7 +70,6 @@ function App() {
             </Footer>
           </Layout>
           <ScrollToTop />
-          <SectionNavigation />
         </div>
       </ThemeProvider>
     </LanguageProvider>

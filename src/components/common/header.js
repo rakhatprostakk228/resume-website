@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import { Button, Drawer, Badge } from 'antd';
 import { useLanguage } from '../context/languageContext';
+import { useTheme } from '../context/themeContext';
 import LanguageSwitcher from './LanguageSwitcher';
 
 import {
@@ -19,54 +20,19 @@ import {
 function AppHeader() {
     const [open, setOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
-    const [isDark, setIsDark] = useState(() => {
-        try {
-            if (typeof window !== 'undefined' && window.localStorage) {
-                const saved = localStorage.getItem('theme');
-                return saved ? JSON.parse(saved) : false;
-            }
-        } catch (e) {
-            // localStorage недоступен (приватный режим Safari)
-        }
-        return false;
-    });
 
     const { t } = useLanguage();
+    const { isDark, toggleTheme } = useTheme();
 
     const showDrawer = () => {
         setOpen(true);
     };
-    
+
     const onClose = () => {
         setOpen(false);
     };
 
-    const toggleTheme = () => {
-        const newTheme = !isDark;
-        setIsDark(newTheme);
-        try {
-            if (typeof window !== 'undefined' && window.localStorage) {
-                localStorage.setItem('theme', JSON.stringify(newTheme));
-            }
-        } catch (e) {
-            // Игнорируем ошибки localStorage
-        }
-        
-        if (newTheme) {
-            document.documentElement.classList.add('dark-theme');
-            document.body.classList.add('dark-theme');
-        } else {
-            document.documentElement.classList.remove('dark-theme');
-            document.body.classList.remove('dark-theme');
-        }
-    };
-
     useEffect(() => {
-        if (isDark) {
-            document.documentElement.classList.add('dark-theme');
-            document.body.classList.add('dark-theme');
-        }
-
         const handleScroll = () => {
             const isScrolled = window.scrollY > 50;
             setScrolled(isScrolled);

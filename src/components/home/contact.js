@@ -30,21 +30,21 @@ function Contact() {
             title: t('contact.email'),
             value: "ahat0405@mail.ru",
             link: "mailto:ahat0405@mail.ru",
-            color: "#27c4ff"
+            color: "#6366f1"
         },
         {
             icon: <PhoneOutlined />,
             title: t('contact.phone'),
             value: "+7(775)-090-70-13",
             link: "tel:+77750907013",
-            color: "#52c41a"
+            color: "#10b981"
         },
         {
             icon: <EnvironmentOutlined />,
             title: t('contact.location'),
             value: "Astana, Kazakhstan",
             link: "https://maps.google.com/?q=Astana,Kazakhstan",
-            color: "#fa8c16"
+            color: "#f59e0b"
         }
     ];
 

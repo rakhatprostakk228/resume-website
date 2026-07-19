@@ -8,9 +8,7 @@ function AppHome() {
     return (
         <div>
             <Hero />
-            <div className="container">
-                <Information />
-            </div>
+            <Information />
             <Skills />
             <Timeline />
             <Contact />

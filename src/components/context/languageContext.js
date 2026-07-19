@@ -109,11 +109,11 @@ const translations = {
                 impact: 'Streamlined hiring process and improved customer service efficiency'
             },
             trustme: {
-                position: 'Layout Designers Coordinator & Technical Specialist',
-                description: 'Coordinating a team of layout designers and providing technical expertise in web development projects. Managing project workflows, ensuring quality standards, and supporting team members with technical challenges. Working on various client projects with focus on modern web technologies and best practices.',
-                category: 'Web Development & Team Management',
-                achievements: ['Team coordination and management', 'Technical support and guidance', 'Quality assurance', 'Project workflow optimization'],
-                impact: 'Ensuring efficient project delivery and maintaining high quality standards'
+                position: 'Junior Frontend Developer & Tech Coordinator',
+                description: 'Led the work of other markup engineers and coordinated technical tasks. Frontend development using Vue, Tailwind, Flext and GitLab. Ensured code quality, task planning and mentoring of team members.',
+                category: 'Frontend Development & Team Coordination',
+                achievements: ['Led team of markup engineers', 'Frontend development with Vue & Tailwind', 'Ensured code quality standards', 'Task planning and team mentoring'],
+                impact: 'Delivered consistent code quality and mentored team members while coordinating technical tasks'
             },
             sewingfactory: {
                 position: 'Co-Founder & Frontend Developer',
@@ -121,6 +121,41 @@ const translations = {
                 category: 'NFT Marketplace & Startup',
                 achievements: ['Co-founded NFT marketplace startup', 'Developed frontend architecture from scratch', 'Built complete UI/UX platform', 'Integrated backend database and core logic', 'Prepared platform for investment'],
                 impact: 'Created innovative NFT marketplace platform ready for investment and scaling'
+            },
+            businesshub: {
+                position: 'Frontend Developer Junior+',
+                description: 'Developed and maintained the Jobtron HRM platform using Vue.js 2, Vuex, JavaScript, Bootstrap, and Laravel REST APIs. Implemented new features, enhanced existing modules, and resolved frontend issues. Collaborated with cross-functional teams in an Agile environment using Git.',
+                category: 'HR Tech',
+                achievements: ['Developed Jobtron HRM platform', 'Implemented new features and modules', 'Resolved frontend issues', 'Collaborated in Agile team using Git'],
+                impact: 'Improved and expanded HRM platform functionality for business clients'
+            },
+            scoutly: {
+                position: 'Frontend Developer & UI/UX Designer',
+                description: 'AI-powered recruitment platform. Designed and developed the complete frontend interface. Implemented AI-powered candidate matching and scoring system. Built candidate assessment and testing modules. Integrated form validation and state management using Zod and Zustand.',
+                category: 'AI & Recruitment',
+                achievements: ['Designed complete frontend interface', 'Implemented AI candidate matching system', 'Built assessment and testing modules', 'Integrated Zod and Zustand for forms and state'],
+                impact: 'Diploma project delivering an AI-powered recruitment platform from design to deployment'
+            },
+            sultanoff: {
+                position: 'Frontend Developer & UI/UX Designer',
+                description: 'Designed and developed a modern personal website for a professional event host (tamada). Built responsive pages showcasing services, pricing, portfolio, and contact information. Created the complete UI/UX design and implemented the frontend from scratch using Vue.js.',
+                category: 'Personal Branding & Events',
+                achievements: ['Designed complete UI/UX from scratch', 'Built responsive service and portfolio pages', 'Developed with Vue.js', 'Delivered pricing and contact sections'],
+                impact: 'Created a modern personal website helping a professional event host showcase services and attract clients'
+            },
+            barakat: {
+                position: 'Frontend Developer',
+                description: 'Developed an online menu website for a café using React.',
+                category: 'Food & Beverage',
+                achievements: ['Built online café menu', 'React frontend implementation'],
+                impact: 'Enabled digital menu access for café customers'
+            },
+            a2: {
+                position: 'Frontend Developer',
+                description: 'Developed a car rental website using Vue.js.',
+                category: 'Automotive & Rental',
+                achievements: ['Built car rental website', 'Vue.js frontend implementation'],
+                impact: 'Enabled online browsing and inquiries for car rental services'
             }
         },
         tabs: {
@@ -391,11 +426,11 @@ const translations = {
                 impact: 'Оптимизировал процесс найма и улучшил эффективность обслуживания клиентов'
             },
             trustme: {
-                position: 'Координатор верстальщиков и технический специалист',
-                description: 'Координирую команду верстальщиков и предоставляю техническую экспертизу в проектах веб-разработки. Управляю рабочими процессами проектов, обеспечиваю стандарты качества и поддерживаю членов команды в решении технических задач. Работаю над различными клиентскими проектами с фокусом на современных веб-технологиях и лучших практиках.',
-                category: 'Веб-разработка и управление командой',
-                achievements: ['Координация и управление командой', 'Техническая поддержка и консультирование', 'Обеспечение качества', 'Оптимизация рабочих процессов проектов'],
-                impact: 'Обеспечение эффективной реализации проектов и поддержание высоких стандартов качества'
+                position: 'Junior Frontend разработчик и технический координатор',
+                description: 'Руководил работой других верстальщиков и координировал технические задачи. Frontend-разработка с использованием Vue, Tailwind, Flext и GitLab. Обеспечивал качество кода, планирование задач и наставничество членов команды.',
+                category: 'Frontend-разработка и координация команды',
+                achievements: ['Руководил командой верстальщиков', 'Frontend-разработка на Vue и Tailwind', 'Обеспечивал стандарты качества кода', 'Планирование задач и наставничество команды'],
+                impact: 'Обеспечил стабильное качество кода и наставничество команды при координации технических задач'
             },
             sewingfactory: {
                 position: 'Со-основатель & Frontend Разработчик',
@@ -403,6 +438,41 @@ const translations = {
                 category: 'NFT Маркетплейс & Стартап',
                 achievements: ['Со-основал стартап NFT маркетплейса', 'Разработал архитектуру фронтенда с нуля', 'Построил полную UI/UX платформу', 'Интегрировал базу данных бэкенда и основную логику', 'Подготовил платформу к инвестициям'],
                 impact: 'Создал инновационную платформу NFT маркетплейса, готовую к инвестициям и масштабированию'
+            },
+            businesshub: {
+                position: 'Frontend разработчик Junior+',
+                description: 'Разрабатывал и поддерживал HRM-платформу Jobtron с использованием Vue.js 2, Vuex, JavaScript, Bootstrap и Laravel REST API. Реализовывал новые функции, улучшал существующие модули и исправлял фронтенд-ошибки. Сотрудничал с кросс-функциональными командами в Agile-среде с использованием Git.',
+                category: 'HR-технологии',
+                achievements: ['Разработал HRM-платформу Jobtron', 'Реализовал новые функции и модули', 'Исправлял фронтенд-ошибки', 'Работал в Agile-команде с использованием Git'],
+                impact: 'Улучшил и расширил функциональность HRM-платформы для бизнес-клиентов'
+            },
+            scoutly: {
+                position: 'Frontend разработчик и UI/UX дизайнер',
+                description: 'AI-платформа для подбора персонала. Спроектировал и разработал полный frontend-интерфейс платформы. Реализовал систему AI-подбора и оценки кандидатов. Создал модули оценки и тестирования кандидатов. Интегрировал валидацию форм и управление состоянием с помощью Zod и Zustand.',
+                category: 'AI и подбор персонала',
+                achievements: ['Спроектировал полный frontend-интерфейс', 'Реализовал систему AI-подбора кандидатов', 'Создал модули оценки и тестирования', 'Интегрировал Zod и Zustand для форм и состояния'],
+                impact: 'Дипломный проект — AI-платформа для подбора персонала, разработанная от дизайна до деплоя'
+            },
+            sultanoff: {
+                position: 'Frontend разработчик и UI/UX дизайнер',
+                description: 'Спроектировал и разработал современный персональный сайт для профессионального ведущего мероприятий (тамады). Создал адаптивные страницы с услугами, ценами, портфолио и контактной информацией. Разработал полный UI/UX дизайн и фронтенд с нуля на Vue.js.',
+                category: 'Персональный бренд и мероприятия',
+                achievements: ['Спроектировал UI/UX дизайн с нуля', 'Создал адаптивные страницы услуг и портфолио', 'Разработал на Vue.js', 'Реализовал разделы цен и контактов'],
+                impact: 'Создал современный персональный сайт, помогающий тамаде продвигать услуги и привлекать клиентов'
+            },
+            barakat: {
+                position: 'Frontend разработчик',
+                description: 'Разработал сайт с онлайн-меню для кафе на React.',
+                category: 'Еда и напитки',
+                achievements: ['Создал онлайн-меню для кафе', 'Реализация фронтенда на React'],
+                impact: 'Обеспечил клиентам кафе доступ к цифровому меню'
+            },
+            a2: {
+                position: 'Frontend разработчик',
+                description: 'Разработал сайт для аренды автомобилей на Vue.js.',
+                category: 'Аренда автомобилей',
+                achievements: ['Создал сайт для аренды автомобилей', 'Реализация фронтенда на Vue.js'],
+                impact: 'Обеспечил онлайн-просмотр и заявки на услуги аренды автомобилей'
             }
         },
         tabs: {
